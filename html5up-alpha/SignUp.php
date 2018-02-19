@@ -126,7 +126,6 @@
   							</div>
   							<span> <a class="button" href="login.html">Log In</a></span>
 						</form>
-					
 				</section>
 
 			<!-- Footer -->
