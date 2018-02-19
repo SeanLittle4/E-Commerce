@@ -115,6 +115,24 @@
 					alert("Please fill out all fields of the sign up form");
 					return false;
 				}
+				var forbidden_names = "~`!@#$%^&*()_+=<>,.?/:;'[]{}0123456789";
+				var email_must = "@.";
+				for(var k = 0; k < forbidden_names.length; k++) {
+					if (a.includes(forbidden_names.charAt(k))) {
+						alert("Please Enter a Valid Name");
+						return false;
+					}
+				}
+				for (var i = email_must.length - 1; i >= 0; i--) {
+					if(!b.includes(email_must.charAt(i))) {
+						alert("Please Enter a Valid Email Address");
+						return false;
+					}
+				}
+				if (typeOf(e) != "number") {
+					alert("Please Enter a Valid Zip Code");
+					return false;
+				}
 			}
 			</script>
 	</body>
