@@ -192,7 +192,7 @@
 	</body>
 
 	<?php
-	$link = mysqli_connect("localhost", "root", "", "custInfo");
+	$link = mysqli_connect("localhost", "root", "", "customerInfo");
 
 	if (!$link) {
 	    echo "Error: Unable to connect to MySQL." . PHP_EOL;
