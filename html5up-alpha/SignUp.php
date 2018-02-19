@@ -45,7 +45,7 @@
     							<input type="text" placeholder="Enter Your Name" name="Name" required>
 
     						<label><b>Email</b></label>
-    							<input type="text" placeholder="Enter Email" name="email" required>
+    							<input type="text" placeholder="Enter Email" name="Email" required>
 
     						<label><b>Address</b></label>
     							<input type="text" placeholder="Enter Address" name="Address" required>
@@ -54,7 +54,7 @@
     							<input type="text" placeholder="Enter Your City" name="City" required>
 
     						<label><b>State</b></label>
-								<select name="category" id="category">
+								<select name="category" id="State">
 														<option value="AL">Alabama</option>
 														<option value="AK">Alaska</option>
 														<option value="AZ">Arizona</option>
@@ -111,10 +111,10 @@
     							<input type="text" placeholder="Enter Your Zip Code" name="Zip" required>
 
     						<label><b>Password</b></label>
-    							<input type="password" placeholder="Enter Password" name="psw" required>
+    							<input type="password" placeholder="Enter Password" name="Psw" required>
 
     						<label><b>Confirm Password</b></label>
-    							<input type="password" placeholder="Confirm Password" name="psw-repeat" required>
+    							<input type="password" placeholder="Confirm Password" name="Psw-repeat" required>
 
 
     						<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
