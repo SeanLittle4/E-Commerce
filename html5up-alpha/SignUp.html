@@ -24,23 +24,6 @@
 							<li><a href="index.html">Home</a></li>
 							<li><a href="contact.html">Contact</a></li>
 							<li><a href="about_us.html">About Us</a></li> <!-- change to about us.html when uploaded-->
-							<li>
-								<a href="#" class="icon fa-angle-down">Layouts</a>
-								<ul>
-									<li><a href="generic.html">Generic</a></li>
-									<li><a href="contact.html">Contact</a></li>
-									<li><a href="elements.html">Elements</a></li>
-									<li>
-										<a href="#">Submenu</a>
-										<ul>
-											<li><a href="#">Option One</a></li>
-											<li><a href="#">Option Two</a></li>
-											<li><a href="#">Option Three</a></li>
-											<li><a href="#">Option Four</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
 							<li><a href="SignUp.html" class="button">Sign Up</a>
 							<li><a href="login.html" class="button">Log In</a></li>
 						</ul>
@@ -53,16 +36,25 @@
 						<h2>Sign Up With Pantheon</h2>
 						
 					</header>
-						<form action="#">
+						<form name = "signUp" action="#" onsubmit="return validateForm()">
   								<div class="box">
     							<h1> Sign Up</h1>
     							<p> Please fill in this form to create an account.</p>
     							<hr>	
-    						<label><b>Username</b></label>
-    							<input type="text" placeholder="Enter Username" name="Username" required>
+    						<label><b>Name</b></label>
+    							<input type="text" placeholder="Enter Your Name" name="Name" required>
 
     						<label><b>Email</b></label>
     							<input type="text" placeholder="Enter Email" name="email" required>
+
+    						<label><b>Address</b></label>
+    							<input type="text" placeholder="Enter Address" name="Address" required>
+
+    						<label><b>City</b></label>
+    							<input type="text" placeholder="Enter Your City" name="City" required>
+
+    						<label><b>Zip Code</b></label>
+    							<input type="text" placeholder="Enter Your Zip Code" name="Zip" required>
 
     						<label><b>Password</b></label>
     							<input type="password" placeholder="Enter Password" name="psw" required>
@@ -108,6 +100,22 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<!--Form Validation Script-->
+			<script>
+			function validateForm() {
+				var a = document.forms["signUp"]["Name"].value;
+				var b = document.forms["signUp"]["email"].value;
+				var c = document.forms["signUp"]["Address"].value;
+				var d = document.forms["signUp"]["City"].value;
+				var e = document.forms["signUp"]["Zip"].value;
+				var f = document.forms["signUp"]["psw"].value;
+				var g = document.forms["signUp"]["psw-repeat"].value;
 
+				if(a=="" || b=="" ||c=="" ||d=="" ||e=="" ||f=="" ||g=="") {
+					alert("Please fill out all fields of the sign up form");
+					return false;
+				}
+			}
+			</script>
 	</body>
 </html>
