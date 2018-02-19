@@ -36,7 +36,7 @@
 						<h2>Sign Up With Pantheon</h2>
 						
 					</header>
-						<form name = "signUp" action="#" onsubmit="return validateForm()">
+						<form name = "signUp" onsubmit="return validateForm()" action="send_sign_up.php" method="post">
   								<div class="box">
     							<h1> Sign Up</h1>
     							<p> Please fill in this form to create an account.</p>
