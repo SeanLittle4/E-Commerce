@@ -1,3 +1,44 @@
+<script type="text/javascript">
+			function validateForm() {
+				alert("header");
+				var a = document.forms['signUp']['Name'].value;
+				var b = document.forms['signUp']['Email'].value;
+				var c = document.forms['signUp']['Address'].value;
+				var d = document.forms['signUp']['City'].value;
+				var e = document.forms['signUp']['Zip'].value;
+				var f = document.forms['signUp']['psw'].value;
+				var g = document.forms['signUp']['psw-repeat'].value;
+
+				if(a=='' || b=='' ||c=='' ||d=='' ||e=='' ||f=='' ||g=='') {
+					alert('Please fill out all fields of the sign up form');
+					return false;
+				}
+				var forbidden_names = '~`!@#$%^&*()_+=<>,.?/:;'[]{}0123456789'';
+				var email_must = '@.';
+				for(var k = 0; k < forbidden_names.length; k++) {
+					if (a.includes(forbidden_names.charAt(k))) {
+						alert('Please Enter a Valid Name');
+						return false;
+					}
+				}
+				for (var i = email_must.length - 1; i >= 0; i--) {
+					if(!b.includes(email_must.charAt(i))) {
+						alert('Please Enter a Valid Email Address');
+						return false;
+					}
+				}
+				if (typeOf(e) != 'number') {
+					alert('Please Enter a Valid Zip Code');
+					return false;
+				}
+				if(f != g) {
+					alert('Passwords must match!');
+					return false;
+				}
+				return true;
+			}
+			</script>
+
 <!DOCTYPE HTML>
 <!--
 	Alpha by HTML5 UP
@@ -36,22 +77,22 @@
 						<h2>Sign Up With Pantheon</h2>
 						
 					</header>
-						<form name = 'signUp' onsubmit='return validateForm()' action='send_sign_up.php' method='POST'>
+						<form name = 'signUp' method='POST' action="send_sign_up.php">
   								<div class='box'>
     							<h1> Sign Up</h1>
     							<p> Please fill in this form to create an account.</p>
     							<hr>	
     						<label><b>Name</b></label>
-    							<input type='text' placeholder='Enter Your Name' name='Name' required>
+    							<input type='text' placeholder='Enter Your Name' name='Name' pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$" title = "Enter a valid name" required>
 
     						<label><b>Email</b></label>
-    							<input type='text' placeholder='Enter Email' name='Email' required>
+    							<input type='text' placeholder='Enter Email' name='Email' pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" title="Enter a valid email address" required>
 
     						<label><b>Address</b></label>
-    							<input type='text' placeholder='Enter Address' name='Address' required>
+    							<input type='text' placeholder='Enter Address' name='Address' pattern = "\s*([0-9]*)\s((NW|SW|SE|NE|S|N|E|W))?(.*)((NW|SW|SE|NE|S|N|E|W))?((#|APT|BSMT|BLDG|DEPT|FL|FRNT|HNGR|KEY|LBBY|LOT|LOWR|OFC|PH|PIER|REAR|RM|SIDE|SLIP|SPC|STOP|STE|TRLR|UNIT|UPPR|\,)[^,]*)(\,)([\s\w]*)\n" title="Enter a valid street address" required>
 
     						<label><b>City</b></label>
-    							<input type='text' placeholder='Enter Your City' name='City' required>
+    							<input type='text' placeholder='Enter Your City' name='City' pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$" title="Enter a valid city" required>
 
     						<label><b>State</b></label>
 								<select type = 'text' placeholder = 'Pick an Option' name='State' id='State' required>
@@ -108,26 +149,23 @@
 														<option value='WY'>Wyoming</option>
 													</select>
     						<label><b>Zip Code</b></label>
-    							<input type='text' placeholder='Enter Your Zip Code' name='Zip' required>
+    							<input type='text' placeholder='Enter Your Zip Code' name='Zip' pattern="[0-9]{5}" title="Enter a valid zip code" required>
 
     						<label><b>Password</b></label>
     							<input type='password' placeholder='Enter Password' name='Psw' required>
 
-    						<label><b>Confirm Password</b></label>
-    							<input type='password' placeholder='Confirm Password' name='Psw-repeat' required>
-
-
     						<p>By creating an account you agree to our <a href='#' style='color:dodgerblue'>Terms & Privacy</a>.</p>
 
     						<div class='clearfix'>
-      						<button type='button' class='cancelbtn'>Cancel</button>
-      						<button type='submit' class='signupbtn'>Sign Up</button>
+      						<button type='button' class='cancelbtn'>Cancel
+      						</button>
+      						<button type='submit' id='start' class='signupbtn'>Sign Up</button>
     						</div>
   							</div>
   							<span> <a class='button' href='login.html'>Log In</a></span>
 						</form>
 				</section>
-
+				
 			<!-- Footer -->
 				<footer id='footer'>
 					<ul class='icons'>
@@ -154,44 +192,7 @@
 			<!--[if lte IE 8]><script src='assets/js/ie/respond.min.js'></script><![endif]-->
 			<script src='assets/js/main.js'></script>
 			<!--Form Validation Script-->
-			<script>
-			function validateForm() {
-				var a = document.forms['signUp']['Name'].value;
-				var b = document.forms['signUp']['Email'].value;
-				var c = document.forms['signUp']['Address'].value;
-				var d = document.forms['signUp']['City'].value;
-				var e = document.forms['signUp']['Zip'].value;
-				var f = document.forms['signUp']['psw'].value;
-				var g = document.forms['signUp']['psw-repeat'].value;
-
-				if(a=='' || b=='' ||c=='' ||d=='' ||e=='' ||f=='' ||g=='') {
-					alert('Please fill out all fields of the sign up form');
-					return false;
-				}
-				var forbidden_names = '~`!@#$%^&*()_+=<>,.?/:;'[]{}0123456789'';
-				var email_must = '@.';
-				for(var k = 0; k < forbidden_names.length; k++) {
-					if (a.includes(forbidden_names.charAt(k))) {
-						alert('Please Enter a Valid Name');
-						return false;
-					}
-				}
-				for (var i = email_must.length - 1; i >= 0; i--) {
-					if(!b.includes(email_must.charAt(i))) {
-						alert('Please Enter a Valid Email Address');
-						return false;
-					}
-				}
-				if (typeOf(e) != 'number') {
-					alert('Please Enter a Valid Zip Code');
-					return false;
-				}
-				if(f != g) {
-					alert('Passwords must match!');
-					return false;
-				}
-			}
-			</script>
+			
 	</body>
 
 	<?php
