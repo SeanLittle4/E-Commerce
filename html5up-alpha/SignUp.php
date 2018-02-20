@@ -186,6 +186,10 @@
 					alert('Please Enter a Valid Zip Code');
 					return false;
 				}
+				if(f != g) {
+					alert('Passwords must match!');
+					return false;
+				}
 			}
 			</script>
 	</body>
