@@ -157,7 +157,7 @@
 			<script>
 			function validateForm() {
 				var a = document.forms['signUp']['Name'].value;
-				var b = document.forms['signUp']['email'].value;
+				var b = document.forms['signUp']['Email'].value;
 				var c = document.forms['signUp']['Address'].value;
 				var d = document.forms['signUp']['City'].value;
 				var e = document.forms['signUp']['Zip'].value;
