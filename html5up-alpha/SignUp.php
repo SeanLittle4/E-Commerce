@@ -54,7 +54,7 @@
     							<input type='text' placeholder='Enter Your City' name='City' required>
 
     						<label><b>State</b></label>
-								<select name='category' id='State'>
+								<select type = 'text' placeholder = 'Pick an Option' name='State' id='State' required>
 														<option value='AL'>Alabama</option>
 														<option value='AK'>Alaska</option>
 														<option value='AZ'>Arizona</option>
