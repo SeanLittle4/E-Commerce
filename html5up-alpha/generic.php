@@ -4,6 +4,10 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+<?php
+	$uberPrice = 10000;
+	$lyftPrice = 15000;
+?>
 <html>
 
 	<head>
@@ -50,6 +54,25 @@
 
 			<!-- Main -->
 				<section id="main" class="container">
+					<?php
+										/**
+										 * Copyright (c) 2014-2015 BitPay
+										 */
+										require __DIR__ . '/vendor/autoload.php';
+										$client = new \Bitpay\Client\Client();
+										$client->setAdapter(new \Bitpay\Client\Adapter\CurlAdapter());
+										$client->setNetwork(new \Bitpay\Network\Testnet());
+										$request = new \Bitpay\Client\Request();
+										$request->setHost('test.bitpay.com');
+										$request->setMethod(\Bitpay\Client\Request::METHOD_GET);
+										$request->setPath('rates/USD');
+										$response = $client->sendRequest($request);
+										$data = json_decode($response->getBody(), true);
+										$bitCoinRate = $data['data']['rate'];
+										$uberRate = $uberPrice/$bitCoinRate;
+										$lyftRate = $lyftPrice/$bitCoinRate;
+
+									?>
 					<header>
 						<h2>Marketplace</h2>
 						<p>Welcome to the crowdsourced debtfunding marketplace!</p>
@@ -62,7 +85,7 @@
 							<div class="6u 12u(mobilep)">
 								<a href="uber.com"><h3>Uber</h3></a>	
 								<p>Uber is a p2p ridesharing, food delivery, and transportation company based in SF, CA. It operates in 633 cities worldwide.</p>
-								<h4>8% 5 year $10,000 loan</h4>
+								<h4>8% 5 year <?php echo $uberRate ?> loan</h4>
 								<form action="https://test.bitpay.com/checkout" method="post" >
   <input type="hidden" name="action" value="checkout" />
   <input type="hidden" name="posData" value="" />
@@ -73,7 +96,7 @@
 							<div class="6u 12u(mobilep)">
 								<a href="Lyft.com"><h3>Lyft</h3></a>
 								<p>Lyft is an on-demand transportation company based in SF, CA. It develops, markets, and operates the Lyft car transportation mobile app.</p>
-								<h4>10% 5 year $10,000 loan</h4>
+								<h4>10% 5 year <?php echo $lyftRate ?> loan</h4>
 								<form action="https://test.bitpay.com/checkout" method="post" >
   <input type="hidden" name="action" value="checkout" />
   <input type="hidden" name="posData" value="" />
