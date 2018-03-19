@@ -85,7 +85,7 @@
 								<h4>10% 5 year <?php echo $lyftRate ?> loan</h4>
 								<form action="https://test.bitpay.com/checkout" method="post" >
   <input type="hidden" name="action" value="checkout" />
-  <input type="hidden" name="posData" value="" />
+  <input type="hidden" name="posData" value="<?php echo $lyftRate ?>" />
   <input type="hidden" name="data" value="7/f26+/YTFW63Wx80y4/Fwf20/euwD6aqyriMrLnrthJWycyVMO0DJc7mIKmq4RY0oN9v/4wMpsRojshkodSBMvD8RgW6JiCZgnsDZ6nFlw=" />
   <input type="image" src="https://test.bitpay.com/img/button-large.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." >
 </form>
