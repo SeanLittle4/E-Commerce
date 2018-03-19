@@ -9,9 +9,9 @@
 	<?php
 	//use PHPMailer\PHPMailer\PHPMailer;
 //use PHPMailer\PHPMailer\Exception;
-	require("/vendor/PHPMailer/PHPMailer/src/PHPMailer.php");
-	require("/vendor/PHPMailer/PHPMailer/src/SMTP.php");
-	require("/vendor/PHPMailer/PHPMailer/src/Exception.php");
+	require("vendor/PHPMailer/PHPMailer/src/PHPMailer.php");
+	require("vendor/PHPMailer/PHPMailer/src/SMTP.php");
+	require("vendor/PHPMailer/PHPMailer/src/Exception.php");
 	require 'vendor/autoload.php';
     //Create a new PHPMailer instance
     $mail = new PHPMailer\PHPMailer\PHPMailer(true);
@@ -91,8 +91,9 @@ EOT;
 					<nav id="nav">
 						<ul>
 							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.php">Marketplace</a>
 							<li><a href="contact.php">Contact</a></li>
-							<li><a href="about_us.html">About Us</a></li> 
+							<li><a href="about_us.html">About Us</a></li> <!-- change to about us.html when uploaded-->
 							<li><a href="SignUp.php" class="button">Sign Up</a>
 							<li><a href="login.html" class="button">Log In</a></li>
 						</ul>
