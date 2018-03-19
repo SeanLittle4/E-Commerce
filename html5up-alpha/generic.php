@@ -30,7 +30,7 @@
 							<li><a href="generic.php">Marketplace</a>
 							<li><a href="contact.php">Contact</a></li>
 							<li><a href="about_us.html">About Us</a></li> <!-- change to about us.html when uploaded-->
-							<li><a href="SignUp.html" class="button">Sign Up</a>
+							<li><a href="SignUp.php" class="button">Sign Up</a>
 							<li><a href="login.html" class="button">Log In</a></li>
 						</ul>
 					</nav>
@@ -70,7 +70,7 @@
 								<a href="uber.com"><h3 align="left">Uber</h3></a>
 								<img src="images/uber.jpg" height=80 align="right" />	
 								<p>Uber is a p2p ridesharing, food delivery, and transportation company based in SF, CA. It operates in 633 cities worldwide.</p>
-								<h4>8% 5 year <?php echo $uberRate ?> loan</h4>
+								<h4><b>8% 5 year <?php echo $uberRate ?> BTC loan, equivalent to $10,000 USD</b></h4>
 								<form action="https://test.bitpay.com/checkout" method="post" >
   <input type="hidden" name="action" value="checkout" />
   <input type="hidden" name="posData" value="" />
@@ -80,9 +80,9 @@
 							</div>
 							<div class="6u 12u(mobilep)">
 								<a href="Lyft.com"><h3>Lyft</h3></a>
-								<img src="images/lyft.png" height=80 align="right" />	
+								<img src="images/lyft.png" height=80 align="right" />
 								<p>Lyft is an on-demand transportation company based in SF, CA. It develops, markets, and operates the Lyft car transportation mobile app.</p>
-								<h4>10% 5 year <?php echo $lyftRate ?> loan</h4>
+								<h4><b>10% 5 year <?php echo $lyftRate ?> BTC loan, equivalent to $15,000 USD</b></h4>
 								<form action="https://test.bitpay.com/checkout" method="post" >
   <input type="hidden" name="action" value="checkout" />
   <input type="hidden" name="posData" value="<?php echo $lyftRate ?>" />
