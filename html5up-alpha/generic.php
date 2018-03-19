@@ -27,25 +27,9 @@
 					<nav id="nav">
 						<ul>
 							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.php">Marketplace</a>
 							<li><a href="contact.html">Contact</a></li>
 							<li><a href="about_us.html">About Us</a></li> <!-- change to about us.html when uploaded-->
-							<li>
-								<a href="#" class="icon fa-angle-down">Layouts</a>
-								<ul>
-									<li><a href="generic.html">Generic</a></li>
-									<li><a href="contact.html">Contact</a></li>
-									<li><a href="elements.html">Elements</a></li>
-									<li>
-										<a href="#">Submenu</a>
-										<ul>
-											<li><a href="#">Option One</a></li>
-											<li><a href="#">Option Two</a></li>
-											<li><a href="#">Option Three</a></li>
-											<li><a href="#">Option Four</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
 							<li><a href="SignUp.html" class="button">Sign Up</a>
 							<li><a href="login.html" class="button">Log In</a></li>
 						</ul>
@@ -78,12 +62,13 @@
 						<p>Welcome to the crowdsourced debtfunding marketplace!</p>
 					</header>
 					<div class="box">
-						<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
+						<span class="image featured"><img src="images/mkt.jpg" alt="" /></span>
 						<h3>Listings</h3>
 						<p>Looking for your next investment opportunity? Invest in crowdsourced debt! Pick a company and a bond below!</p>
 						<div class="row">
 							<div class="6u 12u(mobilep)">
-								<a href="uber.com"><h3>Uber</h3></a>	
+								<a href="uber.com"><h3 align="left">Uber</h3></a>
+								<img src="images/uber.jpg" height=80 align="right" />	
 								<p>Uber is a p2p ridesharing, food delivery, and transportation company based in SF, CA. It operates in 633 cities worldwide.</p>
 								<h4>8% 5 year <?php echo $uberRate ?> loan</h4>
 								<form action="https://test.bitpay.com/checkout" method="post" >
@@ -95,6 +80,7 @@
 							</div>
 							<div class="6u 12u(mobilep)">
 								<a href="Lyft.com"><h3>Lyft</h3></a>
+								<img src="images/lyft.png" height=80 align="right" />	
 								<p>Lyft is an on-demand transportation company based in SF, CA. It develops, markets, and operates the Lyft car transportation mobile app.</p>
 								<h4>10% 5 year <?php echo $lyftRate ?> loan</h4>
 								<form action="https://test.bitpay.com/checkout" method="post" >
