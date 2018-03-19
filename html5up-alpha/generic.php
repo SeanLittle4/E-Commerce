@@ -28,7 +28,7 @@
 						<ul>
 							<li><a href="index.html">Home</a></li>
 							<li><a href="generic.php">Marketplace</a>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="contact.php">Contact</a></li>
 							<li><a href="about_us.html">About Us</a></li> <!-- change to about us.html when uploaded-->
 							<li><a href="SignUp.html" class="button">Sign Up</a>
 							<li><a href="login.html" class="button">Log In</a></li>
