@@ -74,7 +74,7 @@
 								<form action="https://test.bitpay.com/checkout" method="post" >
   <input type="hidden" name="action" value="checkout" />
   <input type="hidden" name="posData" value="" />
-  <input type="hidden" name="data" value="7/f26+/YTFW63Wx80y4/Fwf20/euwD6aqyriMrLnrthJWycyVMO0DJc7mIKmq4RY0oN9v/4wMpsRojshkodSBMvD8RgW6JiCZgnsDZ6nFlw=" />
+  <input type="hidden" name="data" value="7/f26+/YTFW63Wx80y4/Fwf20/euwD6aqyriMrLnrthJWycyVMO0DJc7mIKmq4RY0oN9v/4wMpsRojshkodSBPsLuLLAHTIb88ct1sf/mqS3OVyT1c6sSq/+9vpyj820A8qez4YWoC9Jj0fzkTP2UImx75D5vus8WdDLULzBC4qU5q1BkxTJ0Vb1+E6s/x/1BZw1BvC2v+etXoY482zv7A==" />
   <input type="image" src="https://test.bitpay.com/img/button-large.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." >
 </form>
 							</div>
@@ -85,8 +85,8 @@
 								<h4><b>10% 5 year <?php echo $lyftRate ?> BTC loan, equivalent to $15,000 USD</b></h4>
 								<form action="https://test.bitpay.com/checkout" method="post" >
   <input type="hidden" name="action" value="checkout" />
-  <input type="hidden" name="posData" value="<?php echo $lyftRate ?>" />
-  <input type="hidden" name="data" value="7/f26+/YTFW63Wx80y4/Fwf20/euwD6aqyriMrLnrthJWycyVMO0DJc7mIKmq4RY0oN9v/4wMpsRojshkodSBMvD8RgW6JiCZgnsDZ6nFlw=" />
+  <input type="hidden" name="posData" value="" />
+  <input type="hidden" name="data" value="7/f26+/YTFW63Wx80y4/Fwf20/euwD6aqyriMrLnrthJWycyVMO0DJc7mIKmq4RY0oN9v/4wMpsRojshkodSBPsLuLLAHTIb88ct1sf/mqS3OVyT1c6sSq/+9vpyj820A8qez4YWoC9Jj0fzkTP2UImx75D5vus8WdDLULzBC4qU5q1BkxTJ0Vb1+E6s/x/1BZw1BvC2v+etXoY482zv7A==" />
   <input type="image" src="https://test.bitpay.com/img/button-large.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." >
 </form>
 							</div>
