@@ -76,6 +76,9 @@
   <input type="hidden" name="posData" value="" />
   <input type="hidden" name="data" value="7/f26+/YTFW63Wx80y4/Fwf20/euwD6aqyriMrLnrthJWycyVMO0DJc7mIKmq4RYLzC214QejA2tnQLtf5BYQHpNHh8Y7IugtiWhx97CbRs6cy2sCwRG1Blc33kotVdI" />
   <input type="image" src="https://test.bitpay.com/img/button-large.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." >
+  <div class="6u 12u(mobilep)">
+									<input type="email" name="email" id="email" value="" placeholder="Email" />
+								</div>
 </form>
 							</div>
 							<div class="6u 12u(mobilep)">
@@ -88,6 +91,9 @@
   <input type="hidden" name="posData" value="" />
   <input type="hidden" name="data" value="7/f26+/YTFW63Wx80y4/Fwf20/euwD6aqyriMrLnrthJWycyVMO0DJc7mIKmq4RYgKZ9PD0cgzYGlY8I/f4zmQ6CWmiVtasz+ds0CQ3Eq8NL3B75FQh1p0/gHYhrRX+S" />
   <input type="image" src="https://test.bitpay.com/img/button-large.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." >
+  <div class="6u 12u(mobilep)">
+									<input type="email" name="email" id="email" value="" placeholder="Email" />
+								</div>
 </form>
 							</div>
 						</div>
