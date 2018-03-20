@@ -137,10 +137,10 @@ EOT;
 						<p>Looking for your next investment opportunity? Invest in crowdsourced debt! Pick a company and a bond below!</p>
 						<div class="row">
 							<div class="6u 12u(mobilep)">
-								<a href="uber.com"><h3 align="left">Uber</h3></a>
+								<a href="https://www.uber.com/"><h3 align="left">Uber</h3></a>
 								<img src="images/uber.jpg" height=80 align="right" />	
 								<p>Uber is a p2p ridesharing, food delivery, and transportation company based in SF, CA. It operates in 633 cities worldwide.</p>
-								<h4><b>8% 5 year <?php echo $uberRate ?> BTC loan, equivalent to $10,000 USD</b></h4>
+								<h4><b>8% 5 year <?php echo $uberRate ?> BTC loan, equivalent to $1,000 USD</b></h4>
 								<form action="https://test.bitpay.com/checkout" method="post" >
   <input type="hidden" name="action" value="checkout" />
   <input type="hidden" name="posData" value="" />
@@ -149,10 +149,10 @@ EOT;
 </form>
 							</div>
 							<div class="6u 12u(mobilep)">
-								<a href="Lyft.com"><h3>Lyft</h3></a>
+								<a href="https://www.lyft.com/"><h3>Lyft</h3></a>
 								<img src="images/lyft.png" height=80 align="right" />
 								<p>Lyft is an on-demand transportation company based in SF, CA. It develops, markets, and operates the Lyft car transportation mobile app.</p>
-								<h4><b>10% 5 year <?php echo $lyftRate ?> BTC loan, equivalent to $15,000 USD</b></h4>
+								<h4><b>10% 5 year <?php echo $lyftRate ?> BTC loan, equivalent to $2,000 USD</b></h4>
 								<form action="https://test.bitpay.com/checkout" method="post" >
   <input type="hidden" name="action" value="checkout" />
   <input type="hidden" name="posData" value="" />
