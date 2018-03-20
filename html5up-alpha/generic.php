@@ -146,9 +146,6 @@ EOT;
   <input type="hidden" name="posData" value="" />
   <input type="hidden" name="data" value="7/f26+/YTFW63Wx80y4/Fwf20/euwD6aqyriMrLnrthJWycyVMO0DJc7mIKmq4RYLzC214QejA2tnQLtf5BYQCt9KMEMdYhx9ePLuG2sf5HfHuRprnqAG9mXhfNpTbI37TrMJ2AeeXH2iXNmb/6Zm1FdzwAJou+HWg0J5l6cviXXftvv44FUQUMbFNoZuE0vmOka6UpDoq+oYLE5JTLdtX2xF3avbk4JdVn29p6cgdCWxa2WnnAFSSsB3taDcGFp" />
   <input type="image" src="https://test.bitpay.com/img/button-large.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." >
-  <div class="6u 12u(mobilep)">
-									<input type="email" name="email" id="email" value="" placeholder="Email" />
-								</div>
 </form>
 							</div>
 							<div class="6u 12u(mobilep)">
@@ -161,9 +158,6 @@ EOT;
   <input type="hidden" name="posData" value="" />
   <input type="hidden" name="data" value="7/f26+/YTFW63Wx80y4/Fwf20/euwD6aqyriMrLnrthJWycyVMO0DJc7mIKmq4RYwCF01qKNYfIRA7gYf2B8+wsfbqu9+YDwNbkUEO3XKcLNvudE514WKWdu+XK/RNHSginALdpU58wXt6yd2RSCBepVnvnsp+IyP9PUJHR6V2CQ7F8ddQFaO1BPwL6XC7etqCjbDzaUh9qu4SyINFvPQJDnEVVv7BC9g227vfNH8mvRPZ4czfj/b1O55hHtJKty" />
   <input type="image" src="https://test.bitpay.com/img/button-large.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." >
-  <div class="6u 12u(mobilep)">
-									<input type="email" name="email" id="email" value="" placeholder="Email" />
-								</div>
 </form>
 							</div>
 						</div>
