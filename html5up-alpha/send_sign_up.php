@@ -10,6 +10,8 @@ $result = mysqli_query($connect, $sql);
 if(mysqli_num_rows($result) == 0) {
 mysqli_query($connect,"INSERT INTO custInfo (Name, Email, Address, City, State, Zip, Password)
 VALUES ('$_POST[Name]', '$_POST[Email]', '$_POST[Address]', '$_POST[City]', '$_POST[State]', '$_POST[Zip]', '$secret')");
+echo "<script type = 'text/javascript'> window.location.href='generic.php';
+</script>";
 }
 else {
 	$message = "Email (Your Username) already in use";
@@ -45,7 +47,7 @@ if (array_key_exists('Email', $_POST)) {
     //$mail->Host = 'localhost';
     //$mail->Port = 25;
     //https://stackoverflow.com/questions/28906487/fatal-e
-    $mail->SMTPDebug = 4;
+    //$mail->SMTPDebug = 4;
     $mail->SMTPAuth = true;
     $mail->SMTPSecure = 'tls';
     $mail->Host = 'smtp.gmail.com';
@@ -57,19 +59,17 @@ if (array_key_exists('Email', $_POST)) {
     //and will cause your messages to fail SPF checks
     $mail->setFrom('pantheon.funding@gmail.com', 'Pantheon Funding');
     //Send the message to yourself, or whoever should receive contact for submissions
-    $mail->addAddress($_POST[Email], $_POST[Name]);
+    $mail->addAddress($_POST['Email'], $_POST['Name']);
     //Put the submitter's address in a reply-to header
     //This will fail if the address provided is invalid,
     //in which case we should ignore the whole request
-    if ($mail->addReplyTo($_POST[Email], $_POST[Name])) {
+    if ($mail->addReplyTo($_POST['Email'], $_POST['Name'])) {
         $mail->Subject = 'Welcome';
         //Keep it simple - don't use HTML
         $mail->isHTML(false);
         //Build a simple message body
         $mail->Body = <<<EOT
-		Email: {$_POST[Email]}
-		Name: {$_POST[Name]}
-		Message: {'Welcome to Pantheon!'}
+		'Welcome to Pantheon!'
 EOT;
         //Send the message, check for errors
 	        if (!$mail->send()) {
@@ -80,7 +80,7 @@ EOT;
 	            $msg = 'Thank you! You should have recieved a welcome message from us.';
 	        }
 	    } else {
-	        $msg = 'Invalid email address, message ignored.';
+	        $msg = 'Invalid address, message ignored.';
 	    }
 	}
 } catch (Exception $e) {

@@ -78,7 +78,7 @@
 						<h2>Sign Up With Pantheon</h2>
 						
 					</header>
-						<form name = 'signUp' method='POST' action="send_sign_up.php">
+						<form name = 'signUp' method='POST' action="send_sign_up.php" href='generic.php'>
   								<div class='box'>
     							<h1> Sign Up</h1>
     							<p> Please fill in this form to create an account.</p>
