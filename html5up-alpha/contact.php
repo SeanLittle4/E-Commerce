@@ -33,7 +33,7 @@ if (array_key_exists('email', $_POST)) {
     //$mail->Host = 'localhost';
     //$mail->Port = 25;
     //https://stackoverflow.com/questions/28906487/fatal-e
-    $mail->SMTPDebug = 4;
+    //$mail->SMTPDebug = 4;
     $mail->SMTPAuth = true;
     $mail->SMTPSecure = 'tls';
     $mail->Host = 'smtp.gmail.com';
