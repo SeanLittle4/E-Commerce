@@ -90,7 +90,7 @@
     							<input type='text' placeholder='Enter Email' name='Email' pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" title="Enter a valid email address" required>
 
     						<label><b>Address</b></label>
-    							<input type='text' placeholder='Enter Address' name='Address' pattern = "\s*([0-9]*)\s((NW|SW|SE|NE|S|N|E|W))?(.*)((NW|SW|SE|NE|S|N|E|W))?((#|APT|BSMT|BLDG|DEPT|FL|FRNT|HNGR|KEY|LBBY|LOT|LOWR|OFC|PH|PIER|REAR|RM|SIDE|SLIP|SPC|STOP|STE|TRLR|UNIT|UPPR|\,)[^,]*)(\,)([\s\w]*)\n" title="Enter a valid street address" required>
+    							<input type='text' placeholder='Enter Address' name='Address' required>
 
     						<label><b>City</b></label>
     							<input type='text' placeholder='Enter Your City' name='City' pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$" title="Enter a valid city" required>
