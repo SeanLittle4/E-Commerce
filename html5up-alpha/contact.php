@@ -12,8 +12,10 @@
 	require("vendor/PHPMailer/PHPMailer/src/PHPMailer.php");
 	require("vendor/PHPMailer/PHPMailer/src/SMTP.php");
 	require("vendor/PHPMailer/PHPMailer/src/Exception.php");
-	require 'vendor/autoload.php';
-    //Create a new PHPMailer instance
+	require("vendor/PHPMailer/PHPMailer/src/OAuth.php");
+	require("vendor/PHPMailer/PHPMailer/src/POP3.php");
+
+	    //Create a new PHPMailer instance
     $mail = new PHPMailer\PHPMailer\PHPMailer(true);
 //echo getcwd();
 	$msg = '';
@@ -31,19 +33,19 @@ if (array_key_exists('email', $_POST)) {
     //$mail->Host = 'localhost';
     //$mail->Port = 25;
     //https://stackoverflow.com/questions/28906487/fatal-e
-    $mail->SMTPDebug = 2;
-    $mail->SMTPauth = true;
+    $mail->SMTPDebug = 4;
+    $mail->SMTPAuth = true;
     $mail->SMTPSecure = 'tls';
     $mail->Host = 'smtp.gmail.com';
     $mail->Port = 587;
-    $mail->Username = "pantheon.funding";
-    $mail->Password = "ecommercepantheon";
+    $mail->Username = 'pantheon.funding@gmail.com';
+    $mail->Password = 'ecommercepantheon';
     //Use a fixed address in your own domain as the from address
     //**DO NOT** use the submitter's address here as it will be forgery
     //and will cause your messages to fail SPF checks
-    $mail->setFrom('pantheon.funding@gmail.com');
+    $mail->setFrom('pantheon.funding@gmail.com', 'Pantheon Funding');
     //Send the message to yourself, or whoever should receive contact for submissions
-    $mail->addAddress('pantheon.funding@gmail.com');
+    $mail->addAddress('pantheon.funding@gmail.com', 'Pantheon Funding');
     //Put the submitter's address in a reply-to header
     //This will fail if the address provided is invalid,
     //in which case we should ignore the whole request
