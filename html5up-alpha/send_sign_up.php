@@ -19,4 +19,73 @@ window.location.href='SignUp.php';
 </script>";
 
 }
+	//use PHPMailer\PHPMailer\PHPMailer;
+//use PHPMailer\PHPMailer\Exception;
+	require("vendor/PHPMailer/PHPMailer/src/PHPMailer.php");
+	require("vendor/PHPMailer/PHPMailer/src/SMTP.php");
+	require("vendor/PHPMailer/PHPMailer/src/Exception.php");
+	require("vendor/PHPMailer/PHPMailer/src/OAuth.php");
+	require("vendor/PHPMailer/PHPMailer/src/POP3.php");
+
+	    //Create a new PHPMailer instance
+    $mail = new PHPMailer\PHPMailer\PHPMailer(true);
+//echo getcwd();
+	$msg = '';
+//Don't run this unless we're handling a form submission
+try{
+if (array_key_exists('Email', $_POST)) {
+    date_default_timezone_set('Etc/UTC');
+    //require '../PHPMailerAutoload.php';
+    
+	//CUT HERE
+
+    //Tell PHPMailer to use SMTP - requires a local mail server
+    //Faster and safer than using mail()
+    $mail->isSMTP();
+    //$mail->Host = 'localhost';
+    //$mail->Port = 25;
+    //https://stackoverflow.com/questions/28906487/fatal-e
+    $mail->SMTPDebug = 4;
+    $mail->SMTPAuth = true;
+    $mail->SMTPSecure = 'tls';
+    $mail->Host = 'smtp.gmail.com';
+    $mail->Port = 587;
+    $mail->Username = 'pantheon.funding@gmail.com';
+    $mail->Password = 'ecommercepantheon';
+    //Use a fixed address in your own domain as the from address
+    //**DO NOT** use the submitter's address here as it will be forgery
+    //and will cause your messages to fail SPF checks
+    $mail->setFrom('pantheon.funding@gmail.com', 'Pantheon Funding');
+    //Send the message to yourself, or whoever should receive contact for submissions
+    $mail->addAddress($_POST[Email], $_POST[Name]);
+    //Put the submitter's address in a reply-to header
+    //This will fail if the address provided is invalid,
+    //in which case we should ignore the whole request
+    if ($mail->addReplyTo($_POST[Email], $_POST[Name])) {
+        $mail->Subject = 'Welcome';
+        //Keep it simple - don't use HTML
+        $mail->isHTML(false);
+        //Build a simple message body
+        $mail->Body = <<<EOT
+		Email: {$_POST[Email]}
+		Name: {$_POST[Name]}
+		Message: {'Welcome to Pantheon!'}
+EOT;
+        //Send the message, check for errors
+	        if (!$mail->send()) {
+	            //The reason for failing to send will be in $mail->ErrorInfo
+	            //but you shouldn't display errors to users - process the error, log it on your server.
+	            $msg = 'Sorry, something went wrong. Please try again later.';
+	        } else {
+	            $msg = 'Thank you! You should have recieved a welcome message from us.';
+	        }
+	    } else {
+	        $msg = 'Invalid email address, message ignored.';
+	    }
+	}
+} catch (Exception $e) {
+    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+}
+
+
 ?>
