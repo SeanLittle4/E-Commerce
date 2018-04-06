@@ -4,6 +4,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+
 <html>
 	<head>
 		<title>Log In</title>
@@ -26,7 +27,7 @@
 							<li><a href="contact.php">Contact</a></li>
 							<li><a href="about_us.html">About Us</a></li> <!-- change to about us.html when uploaded-->
 							<li><a href="SignUp.php" class="button">Sign Up</a>
-							<li><a href="login.html" class="button">Log In</a></li>
+							<li><a href="login.php" class="button">Log In</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -37,10 +38,10 @@
 						<h2>Become a Part of Pantheon!</h2>
 						
 					</header>
-						<form action="#">
+						<form name = 'login' method='POST' action="check_login.php" href='generic.php'>
   							<div class="box">
     							<label><b>Username</b></label>
-    								<input type="text" placeholder="Enter Username" name="uname" required>
+    								<input type="text" placeholder="Enter Email" name="uname" required>
 								<label><b>Password</b></label>
     								<input type="password" placeholder="Enter Password" name="psw" required>
 								<button type="submit">Login</button>
@@ -77,4 +78,21 @@
 			<script src="assets/js/main.js"></script>
 
 	</body>
+
+	
+<?php
+	$link = mysqli_connect('localhost', 'root', '', 'customerInfo');
+
+	if (!$link) {
+	    echo 'Error: Unable to connect to MySQL.' . PHP_EOL;
+	    echo 'Debugging errno: ' . mysqli_connect_errno() . PHP_EOL;
+	    echo 'Debugging error: ' . mysqli_connect_error() . PHP_EOL;
+	    exit;
+	}
+
+	echo 'Success: A proper connection to MySQL was made! The my_db database is great.' . PHP_EOL;
+	echo 'Host information: ' . mysqli_get_host_info($link) . PHP_EOL;
+
+	mysqli_close($link);
+?>
 </html>
