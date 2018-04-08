@@ -4,10 +4,17 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+<?php
+// remove all session variables
+session_unset(); 
+
+// destroy the session 
+session_destroy(); 
+?>
 
 <html>
 	<head>
-		<title>Log In</title>
+		<title>Logged Out</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -35,20 +42,10 @@
 			<!-- Main -->
 				<section id="main" class="container 75%">
 					<header>
-						<h2>Sign into Pantheon!</h2>
+						<h2>You've signed out of Pantheon</h2>
+						<p>Thanks for stopping by!</p>
 						
 					</header>
-						<form name = 'login' method='POST' action="check_login.php" href='generic.php'>
-  							<div class="box">
-    							<label><b>Username</b></label>
-    								<input type="text" placeholder="Enter Email" name="uname" required>
-								<label><b>Password</b></label>
-    								<input type="password" placeholder="Enter Password" name="psw" required>
-								<button type="submit">Login</button>
-  							</div>
-						</form>
-						<span> <a class="button" href="SignUp.html">Sign Up</a></span>
-					</div> -->
 				</section>
 
 			<!-- Footer -->
