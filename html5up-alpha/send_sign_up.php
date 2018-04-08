@@ -2,8 +2,7 @@
 //Connecting to sql db.
 $connect = mysqli_connect("localhost","root","","customerInfo");
 //Sending form data to sql db.
-$secret = md5('$_POST[Psw]');
-//$unique = $_POST[Email];
+$secret = md5($_POST['Psw']);
 $sql = "SELECT * FROM custInfo WHERE Email LIKE '$_POST[Email]';";
 $result = mysqli_query($connect, $sql);
 

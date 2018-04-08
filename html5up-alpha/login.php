@@ -43,7 +43,7 @@
     							<label><b>Username</b></label>
     								<input type="text" placeholder="Enter Email" name="uname" required>
 								<label><b>Password</b></label>
-    								<input type="password" placeholder="Enter Password" name="psw" required>
+    								<input type="password" placeholder="Enter Password" name="login_password" required>
 								<button type="submit">Login</button>
   							</div>
 						</form>
