@@ -6,7 +6,7 @@
 				var c = document.forms['signUp']['Address'].value;
 				var d = document.forms['signUp']['City'].value;
 				var e = document.forms['signUp']['Zip'].value;
-				var f = document.forms['signUp']['psw'].value;
+				var f = document.forms['signUp']['Psw'].value;
 				var g = document.forms['signUp']['psw-repeat'].value;
 
 				if(a=='' || b=='' ||c=='' ||d=='' ||e=='' ||f=='' ||g=='') {
@@ -154,6 +154,8 @@
 
     						<label><b>Password</b></label>
     							<input type='password' placeholder='Enter Password' name='Psw' required>
+    						<label><b>Confirm Password</b></label>
+    							<input type='password' placeholder='Confirm Password' name='psw-repeat' required>
 
     						<p>By creating an account you agree to our <a href='#' style='color:dodgerblue'>Terms & Privacy</a>.</p>
 
