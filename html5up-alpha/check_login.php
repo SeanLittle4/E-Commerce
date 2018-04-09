@@ -11,7 +11,7 @@ if(mysqli_num_rows($result) != 0) {
 	$row = $result->fetch_assoc();
     if($secret == $row["Password"]) {
     	session_start();
-    	$_SESSION['username'] = $_POST['uname'];
+    	$_SESSION['email'] = $_POST['uname'];
     	$_SESSION['active'] = true;
     	//echo $_SESSION['username'];
 
