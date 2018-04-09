@@ -1,3 +1,4 @@
+,<?php session_start(); ?>
 <!DOCTYPE HTML>
 <!--
 	Alpha by HTML5 UP
@@ -13,6 +14,20 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
+	
+	<?php
+	if($_SESSION['active'] != true) {
+		?>
+		<body>
+			<header>
+				<h2>Sign Up or Login First</h2>
+			</header>
+		</body>
+	<?php
+	}
+	else {
+	?>
+
 	<body>
 		<div id="page-wrapper">
 
@@ -21,7 +36,7 @@
 					<h1><a href="index.html"><img src="images/pantheon.png" style = "height: 100%" ></a></h1>
 					<nav id="nav">
 						<ul>
-							<li><a href="index.html">Home</a></li>
+							<li><a href="memberHome.php">Home</a></li>
 							<li><a href="generic.php">Marketplace</a>
 							<li><a href="contact.php">Contact</a></li>
 							<li><a href="about_us.html">About Us</a></li> 
@@ -161,4 +176,6 @@
 			<script src="assets/js/main.js"></script>
 
 	</body>
+	<?php }
+	?>
 </html>

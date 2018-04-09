@@ -13,7 +13,7 @@ if(mysqli_num_rows($result) != 0) {
     	session_start();
     	$_SESSION['username'] = $_POST[uname];
     	$_SESSION['active'] = true;
-    	//echo "$_SESSION['username']";
+    	echo $_SESSION['username'];
 
     	echo "<script >
 		window.location.href='memberHome.php';
