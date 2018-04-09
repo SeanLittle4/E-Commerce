@@ -196,7 +196,7 @@ EOT;
 						<div class="6u 12u(mobilep)">
 								<a href="https://www.lyft.com/"><h3>Blue Apron</h3></a>
 								<img src="images/blueapron.jpg" height=80 align="right" />
-								<p>Blue Apron Inc. is an subcription based American ingredient-and-recipe meal kit delivery service</p>
+								<p>Blue Apron Inc. is a subcription based American ingredient-and-recipe meal kit delivery service</p>
 								<h4><b>10% 5 year <?php echo $blueApronRate ?> BTC loan, equivalent to $500 USD</b></h4>
 
 								<?php if($_SESSION["active"] == true ) { ?>
