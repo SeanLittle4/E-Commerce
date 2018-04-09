@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://test.bitpay.com/dashboard/payment-tools/payment-buttons -->
+<html ng-csp="" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!--<base href="/dashboard/">--><base href=".">
+  
+  <!-- Remove Later -->
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>Payment Buttons</title>
+
+  <link rel="stylesheet" href="./Payment Buttons_files/app.aaf9a218.css">
+
+  <link href="./Payment Buttons_files/angular-datepicker.393de8c9.css" rel="stylesheet">
+  <link href="./Payment Buttons_files/loading-bar.4312d83e.css" rel="stylesheet">
+  <link href="./Payment Buttons_files/prism.c0346ec8.css" rel="stylesheet">
+  <link href="./Payment Buttons_files/ng-tags-input.e3977cf3.css" rel="stylesheet">
+
+
+  <noscript>
+    &lt;!-- noscript tags are executed when the user does not have javascript enabled --&gt;
+    &lt;style type="text/css"&gt;
+        .bp-ion-nav-view{display:none;}
+        .noscriptmsg{
+          font-size: 30px;
+          line-height: 40px;
+          padding: 30px;
+        }
+    &lt;/style&gt;
+
+    &lt;p class="noscriptmsg"&gt;
+      You don't have javascript enabled. Enable javascript to view the Bitpay Dashboard.
+    &lt;/p&gt;
+  </noscript>
+
+  <!-- load outdated browser detection before all other js -->
+  <script type="text/javascript" async="" src="./Payment Buttons_files/recaptcha__en.js"></script><script src="./Payment Buttons_files/modernizr-flexbox-custombuild.min.5f4abf36.js"></script><style></style>
+  <script src="./Payment Buttons_files/prism.min.d2bc236f.js"></script>
+
+  <script src="./Payment Buttons_files/lib.a69e2080.js"></script>
+
+  <script src="./Payment Buttons_files/lib2.a82821b4.js"></script><style type="text/css"></style>
+
+  <script src="./Payment Buttons_files/app.d62cf617.js"></script>
+</head>
+<!-- TODO: web version should user platform-ios styles -->
+
+<body ng-controller="AppCtrl" class="grade-a platform-browser platform-macintel platform-ready aside-open">
+  <ion-nav-view class="bp-ion-nav-view view-container" nav-view-transition="none" nav-view-direction="enter" nav-swipe=""><ion-side-menus class="pane view" nav-view="active" style="transform: translate3d(0%, 0px, 0px);">
+
+  <!-- this is where the content of the page gets loaded -->
+  <ion-side-menu-content drag-content="false" class="menu-content pane" style="transform: translate3d(275px, 0px, 0px); width: 1005px;">
+    <ion-nav-bar class="bp-nav-bar nav-bar-container" align-title="center" nav-bar-transition="none" nav-bar-direction="forward" nav-swipe="">
+
+      <ion-nav-buttons side="left" class="hide"></ion-nav-buttons>
+
+    <div class="nav-bar-block" nav-bar="cached"><ion-header-bar class="bp-nav-bar bar bar-header disable-user-behavior" align-title="center"><div class="buttons buttons-left header-item" style="transition-duration: 0ms; opacity: 0;"><span class="left-buttons">
+        <button ng-show="backButton.isVisible" class="button button-icon icon ion-chevron-left bp-back-button" ng-click="onBackButtonClicked()" style=""></button>
+        <button ng-hide="backButton.isVisible" class="button button-icon icon ion-navicon ng-hide" ng-click="onMenuButtonClicked()" style=""></button>
+      </span></div><div class="title title-center header-item" style="transition-duration: 0ms; transform: translate3d(-436.359px, 0px, 0px); left: 51px; right: 51px; opacity: 0;">Payment Tools</div></ion-header-bar></div><div class="nav-bar-block" nav-bar="active"><ion-header-bar class="bp-nav-bar bar bar-header disable-user-behavior" align-title="center"><div class="buttons buttons-left header-item" style="transition-duration: 0ms;"><span class="left-buttons">
+        <button ng-show="backButton.isVisible" class="button button-icon icon ion-chevron-left bp-back-button" ng-click="onBackButtonClicked()" style=""></button>
+        <button ng-hide="backButton.isVisible" class="button button-icon icon ion-navicon ng-hide" ng-click="onMenuButtonClicked()" style=""></button>
+      </span></div><div class="title title-center header-item" style="left: 51px; right: 51px; transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">Payment Buttons</div></ion-header-bar></div></ion-nav-bar>
+
+    <ion-nav-view name="menuContent" class="view-container" nav-view-transition="none" nav-view-direction="forward" nav-swipe=""><ion-view view-title="Payment Buttons" bp-back-button-sref="menu.paymentTools" cache-view="false" class="pane" nav-view="active" style="transform: translate3d(0%, 0px, 0px);">
+
+  <ion-content class="bp-pb scroll-content ionic-scroll overflow-scroll has-header"><div class="scroll">
+
+    <div class="bp-panel"><div class="bp-constrain" ng-transclude="">
+      <div class="bp-panel__header">
+        <div class="bp-panel__header__name" lcl="">Create a Checkout Button</div>
+      </div>
+
+      <div class="bp-panel__body">
+
+        <div class="bp-panel__body__content">
+         <form name="forms.buttonFieldsForm" class="ng-valid-pattern ng-dirty ng-valid-parse ng-valid ng-valid-required ng-valid-remote">
+
+          <div class="price-group">
+            <label class="price-label">
+              <div class="textfield-label" lcl="">Default Price</div>
+              <input ng-change="formInputChanged()" ng-model-options="{ debounce: debounceDuration }" type="text" name="price" placeholder="" ng-model="button.price" ng-pattern="/^[0-9]{1,7}(\.[0-9]+)?$/" required="" class="ng-valid-pattern ng-dirty ng-valid-parse ng-valid ng-valid-required has-visited ng-valid-remote ng-touched">
+
+              <div class="input-validation ng-hide" ng-show="forms.buttonFieldsForm.price.$invalid &amp;&amp; forms.buttonFieldsForm.price.$touched" style="">
+                <i class="generic-form-error icon-left assertive ion-android-close bp-error">
+                  <!-- ngIf: forms.buttonFieldsForm.price.$error.required -->
+                  <!-- ngIf: forms.buttonFieldsForm.price.$error.pattern -->
+                </i>
+              </div>
+            </label>
+
+            <label class="currency-label">
+              <div class="textfield-label" lcl="">&nbsp;</div>
+              <div class="bp-dropdown bp-bills__dropdown">
+                <select ng-model="button.currency" ng-change="formInputChanged()" class="ng-pristine ng-untouched ng-valid">
+                  <option value="BTC">BTC</option>
+                  <option value="BCH">BCH</option>
+                  <option value="" disabled="">----------</option>
+                  <option value="USD" selected="">USD</option>
+                  <option value="EUR">EUR</option>
+                  <option value="GBP">GBP</option>
+                  <option value="" disabled="">----------</option>
+                  <option value="JPY">JPY</option>
+                  <option value="CAD">CAD</option>
+                  <option value="AUD">AUD</option>
+                  <option value="CNY">CNY</option>
+                  <option value="CHF">CHF</option>
+                  <option value="SEK">SEK</option>
+                  <option value="NZD">NZD</option>
+                  <option value="KRW">KRW</option>
+
+                  <!-- ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="BCH" class="ng-binding">BCH</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="AED" class="ng-binding">AED</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="AFN" class="ng-binding">AFN</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="ALL" class="ng-binding">ALL</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="AMD" class="ng-binding">AMD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="ANG" class="ng-binding">ANG</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="AOA" class="ng-binding">AOA</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="ARS" class="ng-binding">ARS</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="AWG" class="ng-binding">AWG</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="AZN" class="ng-binding">AZN</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="BAM" class="ng-binding">BAM</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="BBD" class="ng-binding">BBD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="BDT" class="ng-binding">BDT</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="BGN" class="ng-binding">BGN</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="BHD" class="ng-binding">BHD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="BIF" class="ng-binding">BIF</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="BMD" class="ng-binding">BMD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="BND" class="ng-binding">BND</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="BOB" class="ng-binding">BOB</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="BRL" class="ng-binding">BRL</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="BSD" class="ng-binding">BSD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="BTN" class="ng-binding">BTN</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="BWP" class="ng-binding">BWP</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="BZD" class="ng-binding">BZD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="CDF" class="ng-binding">CDF</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="CLF" class="ng-binding">CLF</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="CLP" class="ng-binding">CLP</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="COP" class="ng-binding">COP</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="CRC" class="ng-binding">CRC</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="CUP" class="ng-binding">CUP</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="CVE" class="ng-binding">CVE</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="CZK" class="ng-binding">CZK</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="DJF" class="ng-binding">DJF</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="DKK" class="ng-binding">DKK</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="DOP" class="ng-binding">DOP</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="DZD" class="ng-binding">DZD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="EGP" class="ng-binding">EGP</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="ETB" class="ng-binding">ETB</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="FJD" class="ng-binding">FJD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="FKP" class="ng-binding">FKP</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="GEL" class="ng-binding">GEL</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="GHS" class="ng-binding">GHS</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="GIP" class="ng-binding">GIP</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="GMD" class="ng-binding">GMD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="GNF" class="ng-binding">GNF</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="GTQ" class="ng-binding">GTQ</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="GYD" class="ng-binding">GYD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="HKD" class="ng-binding">HKD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="HNL" class="ng-binding">HNL</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="HRK" class="ng-binding">HRK</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="HTG" class="ng-binding">HTG</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="HUF" class="ng-binding">HUF</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="IDR" class="ng-binding">IDR</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="ILS" class="ng-binding">ILS</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="INR" class="ng-binding">INR</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="IQD" class="ng-binding">IQD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="IRR" class="ng-binding">IRR</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="ISK" class="ng-binding">ISK</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="JEP" class="ng-binding">JEP</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="JMD" class="ng-binding">JMD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="JOD" class="ng-binding">JOD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="KES" class="ng-binding">KES</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="KGS" class="ng-binding">KGS</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="KHR" class="ng-binding">KHR</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="KMF" class="ng-binding">KMF</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="KPW" class="ng-binding">KPW</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="KWD" class="ng-binding">KWD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="KYD" class="ng-binding">KYD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="KZT" class="ng-binding">KZT</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="LAK" class="ng-binding">LAK</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="LBP" class="ng-binding">LBP</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="LKR" class="ng-binding">LKR</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="LRD" class="ng-binding">LRD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="LSL" class="ng-binding">LSL</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="LYD" class="ng-binding">LYD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="MAD" class="ng-binding">MAD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="MDL" class="ng-binding">MDL</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="MGA" class="ng-binding">MGA</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="MKD" class="ng-binding">MKD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="MMK" class="ng-binding">MMK</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="MNT" class="ng-binding">MNT</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="MOP" class="ng-binding">MOP</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="MRU" class="ng-binding">MRU</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="MUR" class="ng-binding">MUR</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="MVR" class="ng-binding">MVR</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="MWK" class="ng-binding">MWK</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="MXN" class="ng-binding">MXN</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="MYR" class="ng-binding">MYR</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="MZN" class="ng-binding">MZN</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="NAD" class="ng-binding">NAD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="NGN" class="ng-binding">NGN</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="NIO" class="ng-binding">NIO</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="NOK" class="ng-binding">NOK</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="NPR" class="ng-binding">NPR</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="OMR" class="ng-binding">OMR</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="PAB" class="ng-binding">PAB</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="PEN" class="ng-binding">PEN</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="PGK" class="ng-binding">PGK</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="PHP" class="ng-binding">PHP</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="PKR" class="ng-binding">PKR</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="PLN" class="ng-binding">PLN</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="PYG" class="ng-binding">PYG</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="QAR" class="ng-binding">QAR</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="RON" class="ng-binding">RON</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="RSD" class="ng-binding">RSD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="RUB" class="ng-binding">RUB</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="RWF" class="ng-binding">RWF</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="SAR" class="ng-binding">SAR</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="SBD" class="ng-binding">SBD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="SCR" class="ng-binding">SCR</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="SDG" class="ng-binding">SDG</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="SGD" class="ng-binding">SGD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="SHP" class="ng-binding">SHP</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="SLL" class="ng-binding">SLL</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="SOS" class="ng-binding">SOS</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="SRD" class="ng-binding">SRD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="STN" class="ng-binding">STN</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="SVC" class="ng-binding">SVC</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="SYP" class="ng-binding">SYP</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="SZL" class="ng-binding">SZL</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="THB" class="ng-binding">THB</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="TJS" class="ng-binding">TJS</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="TMT" class="ng-binding">TMT</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="TND" class="ng-binding">TND</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="TOP" class="ng-binding">TOP</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="TRY" class="ng-binding">TRY</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="TTD" class="ng-binding">TTD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="TWD" class="ng-binding">TWD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="TZS" class="ng-binding">TZS</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="UAH" class="ng-binding">UAH</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="UGX" class="ng-binding">UGX</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="UYU" class="ng-binding">UYU</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="UZS" class="ng-binding">UZS</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="VEF" class="ng-binding">VEF</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="VND" class="ng-binding">VND</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="VUV" class="ng-binding">VUV</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="WST" class="ng-binding">WST</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="XAF" class="ng-binding">XAF</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="XCD" class="ng-binding">XCD</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="XOF" class="ng-binding">XOF</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="XPF" class="ng-binding">XPF</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="YER" class="ng-binding">YER</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="ZAR" class="ng-binding">ZAR</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="ZMW" class="ng-binding">ZMW</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="ZWL" class="ng-binding">ZWL</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="XAG" class="ng-binding">XAG</option><!-- end ngRepeat: currency in currencies --><option ng-repeat="currency in currencies" value="XAU" class="ng-binding">XAU</option><!-- end ngRepeat: currency in currencies -->
+                </select>
+              </div>
+            </label>
+          </div>
+
+          <label>
+            <div class="textfield-label" lcl="">Checkout Description</div>
+            <input ng-change="formInputChanged()" ng-model-options="{ debounce: debounceDuration }" type="text" name="buyerEmail" placeholder="(optional)" ng-model="button.itemDesc" class="ng-valid ng-dirty ng-valid-parse has-visited ng-valid-remote ng-touched">
+
+            <div class="input-validation ng-hide" ng-show="forms.buyerInfoForm.buyerEmail.$invalid &amp;&amp; forms.buyerInfoForm.buyerEmail.$touched" style="">
+              <i class="generic-form-error icon-left assertive ion-android-close bp-error">
+                <!-- ngIf: forms.buyerInfoForm.buyerEmail.$error.required -->
+                <!-- ngIf: forms.buyerInfoForm.buyerEmail.$error.email -->
+              </i>
+            </div>
+          </label>
+
+          <lbl>
+            <div class="textfield-label" style="margin-bottom: 5px;" lcl="">Button Size</div>
+
+            <div class="button-sizes">
+              <div class="button-size button-size__small" ng-class="{&#39;button-size__selected&#39;: buttonData.size === &#39;small&#39;}" ng-click="setButtonSize(&#39;small&#39;)">
+                <div class="button-size__label">97 x 31 px</div>
+              </div>
+              <div class="button-size button-size__medium" ng-class="{&#39;button-size__selected&#39;: buttonData.size === &#39;medium&#39;}" ng-click="setButtonSize(&#39;medium&#39;)">
+                <div class="button-size__label">129 x 45 px</div>
+              </div>
+              <div class="button-size button-size__large button-size__selected" ng-class="{&#39;button-size__selected&#39;: buttonData.size === &#39;large&#39;}" ng-click="setButtonSize(&#39;large&#39;)">
+                <div class="button-size__label">166 x 58 px</div>
+              </div>
+            </div>
+           
+          </lbl></form></div>
+
+        
+
+        <div class="bp-panel__body__description">
+          <p>
+            This button is used to complete a sale on your website.
+          </p>
+          <br>
+          <p>
+            The merchant manages the shopping cart and collects the buyers' names and addresses if necessary.
+          </p>
+        </div>
+
+      </div>
+
+
+    </div>
+</div>
+
+    <div class="bp-panel"><div class="bp-constrain" ng-transclude="">
+
+      <div class="bp-panel__header">
+        <div class="bp-panel__header__name" lcl="">Payment Notifications</div>
+      </div>
+
+      <div class="bp-panel__body">
+        <div class="bp-panel__body__content">
+          <form name="forms.paymentNotificationsForm" class="ng-valid-url ng-dirty ng-valid-remote ng-valid ng-valid-email">
+          <label>
+            <div class="textfield-label" lcl="">Server IPN</div>
+            <input ng-change="formInputChanged()" ng-model-options="{ debounce: debounceDuration }" type="url" name="notificationURL" placeholder="(optional)" ng-model="button.notificationURL" class="ng-pristine ng-untouched ng-valid ng-valid-url">
+
+            <div class="input-validation ng-hide" ng-show="forms.paymentNotificationsForm.notificationURL.$invalid &amp;&amp; forms.paymentNotificationsForm.notificationURL.$touched" style="">
+              <i class="generic-form-error icon-left assertive ion-android-close bp-error">
+                <!-- ngIf: forms.paymentNotificationsForm.notificationURL.$error.url -->
+              </i>
+            </div>
+          </label>
+
+          <label>
+            <div class="textfield-label" lcl="">Browser Redirect</div>
+            <input ng-change="formInputChanged()" ng-model-options="{ debounce: debounceDuration }" type="url" name="redirectURL" placeholder="(optional)" ng-model="button.redirectURL" class="ng-valid ng-valid-url ng-dirty has-visited ng-valid-remote ng-touched">
+
+            <div class="input-validation ng-hide" ng-show="forms.paymentNotificationsForm.redirectURL.$invalid &amp;&amp; forms.paymentNotificationsForm.redirectURL.$touched" style="">
+              <i class="generic-form-error icon-left assertive ion-android-close bp-error">
+                <!-- ngIf: forms.paymentNotificationsForm.redirectURL.$error.url -->
+              </i>
+            </div>
+          </label>
+
+          <label>
+            <div class="textfield-label" lcl="">Send Email Notifications To</div>
+            <input ng-change="formInputChanged()" ng-model-options="{ debounce: debounceDuration }" type="email" name="notificationEmail" placeholder="(optional)" ng-model="button.notificationEmail" class="has-visited ng-valid-remote ng-touched ng-dirty ng-valid ng-valid-email has-focus">
+
+            <div class="input-validation ng-hide" ng-show="forms.paymentNotificationsForm.notificationEmail.$invalid &amp;&amp; forms.paymentNotificationsForm.notificationEmail.$touched" style="">
+              <i class="generic-form-error icon-left assertive ion-android-close bp-error">
+                <!-- ngIf: forms.paymentNotificationsForm.notificationEmail.$error.email -->
+              </i>
+            </div>
+          </label>
+         </form>
+        </div>
+
+        <div class="bp-panel__body__description">
+          <p>
+            When the transaction is completed, the seller will receive an email order confirmation, and a secure server POST. The buyer will be given a browser-redirect URL to click to return to your website.
+          </p>
+        </div>
+      </div>
+    </div>
+</div>
+
+    <div class="bp-panel" style="flex-wrap: wrap;"><div class="bp-constrain" ng-transclude="">
+
+      <div class="bp-panel__header">
+        <div class="bp-panel__header__name" lcl="">Generated Code</div>
+      </div>
+      <div class="bp-panel__body">
+        <div class="generated-code">
+          <p>Select all of the HTML code below, then copy and past it into your web page.</p>
+          <pre class="  language-html"><code bp-prism="buttonData" class=" ng-binding  language-html" interpolated-data="interpolatedData"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://test.bitpay.com/checkout<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hidden<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>action<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkout<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hidden<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>posData<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hidden<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>data<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>7/f26+/YTFW63Wx80y4/Fwf20/euwD6aqyriMrLnrthJWycyVMO0DJc7mIKmq4RYc4s+Cs3LnkG+J7mU/wyDCA26Mh9CiJoZoI1sQCMgBdZLRst/UAgt06/Jy8v3XyMx95fDlYtA1nOt1hsyFQjcjZ89AZl9QgKkkwaNT0/lO/htehPp98ybM9OiG+jrA05oFAzamApxA0BPIZ+dVz/0dhwemdf8qwl3DJXcHnmo/IX2/a/vV77ZquwVybh4m3dLXrb829r+dPZnK/PnBIWpcFrANOHDpEh06U4XSs6Fz0W3wC73yy9vJLX0QbufvbuF<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>image<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://test.bitpay.com/img/button-large.png<span class="token punctuation">"</span></span> <span class="token attr-name">border</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>BitPay, the easy way to pay with bitcoins.<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span></code></pre>
+          <div class="bp-pb__copy-code-button" ng-click="copy()">
+  					<img src="./Payment Buttons_files/copy-icon.svg">
+            <div>Copy code</div>
+            <div ng-show="copied" class="bp-pb__copy-code-button__success ng-hide" style="">Copied to Clipboard!</div>
+          </div>
+          <textarea class="hidden-textarea ng-pristine ng-untouched ng-valid" ng-model="interpolatedData.html" id="copyContainer"></textarea>
+        </div>
+        <div class="button-preview">
+          <div class="button-preview__label">Preview:</div>
+          <form action="https://test.bitpay.com/checkout" method="post" target="_blank" class="ng-pristine ng-valid">
+            <input type="hidden" name="action" value="checkout">
+            <input type="hidden" name="posData" value="">
+            <input type="hidden" name="data" value="7/f26+/YTFW63Wx80y4/Fwf20/euwD6aqyriMrLnrthJWycyVMO0DJc7mIKmq4RYc4s+Cs3LnkG+J7mU/wyDCA26Mh9CiJoZoI1sQCMgBdZLRst/UAgt06/Jy8v3XyMx95fDlYtA1nOt1hsyFQjcjZ89AZl9QgKkkwaNT0/lO/htehPp98ybM9OiG+jrA05oFAzamApxA0BPIZ+dVz/0dhwemdf8qwl3DJXcHnmo/IX2/a/vV77ZquwVybh4m3dLXrb829r+dPZnK/PnBIWpcFrANOHDpEh06U4XSs6Fz0W3wC73yy9vJLX0QbufvbuF">
+            <input type="image" ng-src="https://test.bitpay.com/img/button-large.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." src="./Payment Buttons_files/button-large.png">
+          </form>
+        </div>
+      </div>
+
+    </div>
+</div>
+
+
+  </div></ion-content>
+
+</ion-view></ion-nav-view>
+  </ion-side-menu-content>
+
+  <!-- this is the content of the left menu -->
+  <ion-side-menu side="left" class="menu--dark menu menu-left" show-aside-when="(min-width:64.063em)" is-enabled="true" width="275" style="width: 275px;">
+
+
+    <div class="bp-org-menu">
+      <a href="https://test.bitpay.com/">
+        <div class="bp-org-menu__brand">
+          <img src="./Payment Buttons_files/bitpay-logo.svg">
+        </div>
+      </a>
+      <div class="bp-org-menu__org-switcher" ng-click="showOrgPopover($event)">
+        <span class="bp-org-menu__org-switcher__name ng-binding">Pantheon</span>
+        <i class="icon ion-chevron-down bp-org-menu__org-switcher__arrow ng-hide" ng-show="countOrgs() &gt; 1 || hasDebitCard" style=""></i>
+      </div>
+    </div>
+
+    <div class="bp-user-menu">
+      <div class="bp-user-menu__user" ng-click="showUserPopover($event)">
+        <img style="cursor: pointer;;cursor: pointer;" alt="" height="24" width="24" class="bp-user-menu__user__icon hoverZoomLink" user-email="user.email" size="24" ng-src="https://gravatar.com/avatar/5010d49d4c6f1662338132ea9d91fdbd.jpg?s=24&amp;d=https://bitpay.com/dashboard/img/default-user.png" src="./Payment Buttons_files/5010d49d4c6f1662338132ea9d91fdbd.jpg">
+        <span class="bp-user-menu__user__name ng-binding">Sean Little</span>
+        <i class="icon ion-chevron-up bp-user-menu__user__arrow"></i>
+      </div>
+      <!-- <button class="bp-user-menu__intercom" ng-click="toggleIntercom()">
+        <i class="icon ion-help-circled"></i>
+      </button> -->
+    </div>
+
+    <ion-content class="bp-nav-menu scroll-content ionic-scroll overflow-scroll"><div class="scroll">
+
+      <ion-list class="menu__item-ion-list disable-user-behavior"><div class="list">
+
+        <div ng-hide="isCompleteMenu" class="nav-items ng-hide" style="">
+          <ion-item menu-close="" ui-sref-active="menu__active" ui-sref="menu.getstarted" class="item item-complex" href="/dashboard/getstarted"><a class="item-content">
+            <span class="menu__icon"><i class="icon ion-ios-pulse-strong"></i></span>
+            <span lcl="">Get Started</span>
+          </a></ion-item>
+        </div>
+
+        <div ng-show="isCompleteMenu" class="nav-items" style="">
+
+          <div>
+            <ion-item menu-close="" ui-sref-active="menu__active" ui-sref="menu.overview" bp-facades="" class="item item-complex" href="/dashboard/overview"><a class="item-content">
+              <span class="menu__icon"><i class="icon ion-stats-bars"></i></span>
+              <span lcl="">Overview</span>
+              <i class="menu__icon--right ion-locked ng-hide" ng-show="bpFacadesUnauthorized" style=""></i>
+            </a></ion-item>
+          </div>
+
+          <div>
+            <ion-item menu-close="" ui-sref-active="menu__active" ui-sref="menu.payments" bp-facades="" class="item item-complex" href="/dashboard/payments"><a class="item-content">
+              <span class="menu__icon"><i class="icon ion-ios-pulse-strong"></i></span>
+              <span lcl="">Payments</span>
+              <i class="menu__icon--right ion-locked ng-hide" ng-show="bpFacadesUnauthorized" style=""></i>
+            </a></ion-item>
+          </div>
+
+          <div>
+            <ion-item menu-close="" ui-sref-active="menu__active" ui-sref="menu.paymentTools" bp-facades="" class="item item-complex" href="/dashboard/payment-tools"><a class="item-content">
+              <span class="menu__icon"><i class="icon ion-cube"></i></span>
+              <span lcl="">Payment Tools</span>
+              <i class="menu__icon--right ion-locked ng-hide" ng-show="bpFacadesUnauthorized" style=""></i>
+            </a></ion-item>
+          </div>
+
+          <div>
+            <!-- ngIf: !hasOnlyFinanceFacade --><ion-item menu-close="" ui-sref-active="menu__active" ui-sref="menu.settings.general" ng-if="!hasOnlyFinanceFacade" bp-facades="" class="item item-complex" href="/dashboard/settings"><a class="item-content">
+              <span class="menu__icon"><i class="icon ion-gear-a"></i></span>
+              <span lcl="">Settings</span>
+              <i class="menu__icon--right ion-locked ng-hide" ng-show="bpFacadesUnauthorized"></i>
+            </a></ion-item><!-- end ngIf: !hasOnlyFinanceFacade -->
+            <!-- ngIf: hasOnlyFinanceFacade -->
+          </div>
+
+          <ion-item menu-close="" ui-sref-active="menu__active" ng-show="referralEnabled" ui-sref="menu.dashboard({ page: &#39;referrals&#39; })" class="item item-complex ng-hide" href="/dashboard/merchant/referrals" style=""><a class="item-content">
+            <span class="menu__icon"><i class="icon ion-ios-people"></i></span>
+            <span lcl="">Referrals</span>
+          </a></ion-item>
+
+        </div>
+
+        <div class="help-items">
+
+          <div>
+            <ion-item class="item-help item item-complex" menu-close="" href="https://bitpay.com/docs" target="blank"><a class="item-content" ng-href="https://bitpay.com/docs" target="blank" href="https://bitpay.com/docs">
+              <span class="menu__icon"><i class="icon ion-document"></i></span>
+              <span lcl="" class="item-help__text">Documentation</span>
+            </a></ion-item>
+          </div>
+
+          <div>
+            <ion-item class="item-help item item-complex" menu-close="" href="https://help.bitpay.com" target="blank" style="margin-bottom: -15px;"><a class="item-content" ng-href="https://help.bitpay.com" target="blank" href="https://help.bitpay.com/">
+              <span class="menu__icon"><i class="icon ion-ios-medkit-outline"></i></span>
+              <span lcl="" class="item-help__text">Help &amp; Support</span>
+            </a></ion-item>
+          </div>
+
+        </div>
+
+      </div></ion-list>
+
+    </div></ion-content>
+  </ion-side-menu>
+
+</ion-side-menus></ion-nav-view>
+
+
+
+<bp-lazy-load load-when="true" src="lib/analytics/intercom.edef5433.e04eec12.js" on-load="bootstrapAnalyticsIntercom"></bp-lazy-load>
+<bp-lazy-load load-when="true" src="lib/analytics/google-analytics.7507b3f1.js" on-load="bootstrapAnalyticsGA"></bp-lazy-load>
+<bp-lazy-load load-when="true" href="https://fonts.googleapis.com/css?family=Roboto:500,400,400italic,700italic,300,700,500italic,300italic" rel="stylesheet" type="text/css"></bp-lazy-load>
+<bp-lazy-load load-when="true" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700" rel="stylesheet" type="text/css"></bp-lazy-load>
+<bp-lazy-load load-when="true" src="https://www.google.com/recaptcha/api.js?render=explicit&amp;onload=onRecaptchaLoad"></bp-lazy-load>
+
+
+<div id="SwfStore_bitpay_0" style="position: absolute; top: -2000px; left: -2000px;"><object height="100" width="500" codebase="https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab" id="SwfStore_bitpay_1" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">	<param value="https://bitpay.com/downloads/storage.swf" name="movie">	<param value="namespace=bitpay&amp;LSOName=bitpay" name="FlashVars">	<param value="always" name="allowScriptAccess">	<embed height="375" align="middle" width="500" pluginspage="https://www.macromedia.com/go/getflashplayer" flashvars="namespace=bitpay&amp;LSOName=bitpay" type="application/x-shockwave-flash" allowscriptaccess="always" quality="high" loop="false" play="true" name="SwfStore_bitpay_1" bgcolor="#ffffff" src="https://bitpay.com/downloads/storage.swf"></object></div><script src="./Payment Buttons_files/intercom.edef5433.e04eec12.js"></script><script src="https://test.bitpay.com/dashboard/lib/analytics/google-analytics.7507b3f1.js"></script><link href="./Payment Buttons_files/css" rel="stylesheet" type="text/css"><link href="./Payment Buttons_files/css(1)" rel="stylesheet" type="text/css"><script src="./Payment Buttons_files/api.js"></script></body></html>

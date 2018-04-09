@@ -7,6 +7,8 @@
 <?php
 	$uberPrice = 1000;
 	$lyftPrice = 2000;
+	$blueApronPrice = 500;
+	$helloFreshPrice = 250;
 ?>
 <html>
 <?php
@@ -125,7 +127,8 @@ EOT;
 										$bitCoinRate = $data['data']['rate'];
 										$uberRate = $uberPrice/$bitCoinRate;
 										$lyftRate = $lyftPrice/$bitCoinRate;
-
+										$blueApronRate = $blueApronPrice/$bitCoinRate;
+										$helloFreshRate = $helloFreshPrice/$bitCoinRate;
 									?>
 					<header>
 						<h2>Marketplace</h2>
@@ -157,6 +160,30 @@ EOT;
   <input type="hidden" name="action" value="checkout" />
   <input type="hidden" name="posData" value="" />
   <input type="hidden" name="data" value="7/f26+/YTFW63Wx80y4/Fwf20/euwD6aqyriMrLnrthJWycyVMO0DJc7mIKmq4RYwCF01qKNYfIRA7gYf2B8+wsfbqu9+YDwNbkUEO3XKcLNvudE514WKWdu+XK/RNHSginALdpU58wXt6yd2RSCBepVnvnsp+IyP9PUJHR6V2CQ7F8ddQFaO1BPwL6XC7etqCjbDzaUh9qu4SyINFvPQJDnEVVv7BC9g227vfNH8mvRPZ4czfj/b1O55hHtJKty" />
+  <input type="image" src="https://test.bitpay.com/img/button-large.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." >
+</form>
+							</div>
+						<div class="6u 12u(mobilep)">
+								<a href="https://www.lyft.com/"><h3>Blue Apron</h3></a>
+								<img src="images/blueapron.jpg" height=80 align="right" />
+								<p>Blue Apron Inc. is an subcription based American ingredient-and-recipe meal kit delivery service</p>
+								<h4><b>10% 5 year <?php echo $blueApronRate ?> BTC loan, equivalent to $500 USD</b></h4>
+								<form action="https://test.bitpay.com/checkout" method="post" >
+  <input type="hidden" name="action" value="checkout" />
+  <input type="hidden" name="posData" value="" />
+  <input type="hidden" name="data" value="7/f26+/YTFW63Wx80y4/Fwf20/euwD6aqyriMrLnrthJWycyVMO0DJc7mIKmq4RYc4s+Cs3LnkG+J7mU/wyDCA26Mh9CiJoZoI1sQCMgBdZLRst/UAgt06/Jy8v3XyMx95fDlYtA1nOt1hsyFQjcjZ89AZl9QgKkkwaNT0/lO/htehPp98ybM9OiG+jrA05oFAzamApxA0BPIZ+dVz/0dhwemdf8qwl3DJXcHnmo/IX2/a/vV77ZquwVybh4m3dLXrb829r+dPZnK/PnBIWpcFrANOHDpEh06U4XSs6Fz0W3wC73yy9vJLX0QbufvbuF" />
+  <input type="image" src="https://test.bitpay.com/img/button-large.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." >
+</form>
+							</div>
+							<div class="6u 12u(mobilep)">
+								<a href="https://www.lyft.com/"><h3>Hello Fresh</h3></a>
+								<img src="images/hellofresh.png" height=80 align="right" />
+								<p>HelloFresh is an international publicly traded meal-kit company based in Berlin, Germany. </p>
+								<h4><b>7% 5 year <?php echo $helloFreshRate ?> BTC loan, equivalent to $250 USD</b></h4>
+								<form action="https://test.bitpay.com/checkout" method="post" >
+  <input type="hidden" name="action" value="checkout" />
+  <input type="hidden" name="posData" value="" />
+  <input type="hidden" name="data" value="7/f26+/YTFW63Wx80y4/Fwf20/euwD6aqyriMrLnrthJWycyVMO0DJc7mIKmq4RYMacYEx6BPX1AZCYgJvKmkHPy0AgAn9dcHx3poOZJz6IpOQxbnxyu3/0hlMUrP7aVcEVi6kRqstxm13orFOgWmMwQVHzY3I42WFc7ncNQ/cNVulDn/UmU+x58S867LYdwm1c1lED/NLoJiTHftNgsguYitap+CLCaUtchTab6Dukyu80EnZa33281IkF8FHv207AxCR04lTFx/+vQLdmzClT9XVv/cegJZb2Q5iUI4qQeUgNbcJFYXNuYgNKa9sqU" />
   <input type="image" src="https://test.bitpay.com/img/button-large.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." >
 </form>
 							</div>
