@@ -1,3 +1,11 @@
+<?php 
+	session_start(); 
+	if(isset($_SESSION['active'])) {
+
+	} else {
+		$_SESSION['active'] = false;
+	}
+?>
 <!DOCTYPE HTML>
 <!--
 	Alpha by HTML5 UP
@@ -89,16 +97,29 @@ EOT;
 
 			<!-- Header -->
 				<header id="header">
-					<h1><a href="index.html"><img src="images/pantheon.png" style = "height: 100%" ></a></h1>
+					<h1><a href="index.php"><img src="images/pantheon.png" style = "height: 100%" ></a></h1>
 					<nav id="nav">
+						<?php
+							if($_SESSION["active"] == true) {
+						?>
 						<ul>
-							<li><a href="index.html">Home</a></li>
+							<li><a href="memberHome.php">Home</a></li>
+							<li><a href="generic.php">Marketplace</a></li>
+							<li><a href="contact.php">Contact</a></li>
+							<li><a href="about_us.php">About Us</a></li>
+							<li><a href="logout.php" class="button">Log Out</a></li>
+						</ul>
+						<?php } else { ?>
+
+						<ul>
+							<li><a href="index.php">Home</a></li>
 							<li><a href="generic.php">Marketplace</a>
 							<li><a href="contact.php">Contact</a></li>
-							<li><a href="about_us.html">About Us</a></li> <!-- change to about us.html when uploaded-->
-							<li><a href="SignUp.php" class="button">Sign Up</a>
+							<li><a href="about_us.php">About Us</a></li> 
+							<li><a href="SignUp.php" class="button">Sign Up</a></li>
 							<li><a href="login.php" class="button">Log In</a></li>
 						</ul>
+						<?php }			?>
 					</nav>
 				</header>
 

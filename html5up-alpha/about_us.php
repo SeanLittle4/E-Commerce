@@ -1,0 +1,116 @@
+<?php 
+	session_start(); 
+	if(isset($_SESSION['active'])) {
+
+	} else {
+		$_SESSION['active'] = false;
+	}
+?>
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>About Us</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="index.php"><img src="images/pantheon.png" style = "height: 100%" ></a></h1>
+					<nav id="nav">
+						<?php
+							if($_SESSION["active"] == true) {
+						?>
+						<ul>
+							<li><a href="memberHome.php">Home</a></li>
+							<li><a href="generic.php">Marketplace</a></li>
+							<li><a href="contact.php">Contact</a></li>
+							<li><a href="about_us.php">About Us</a></li>
+							<li><a href="logout.php" class="button">Log Out</a></li>
+						</ul>
+						<?php } else { ?>
+
+						<ul>
+							<li><a href="index.php">Home</a></li>
+							<li><a href="generic.php">Marketplace</a>
+							<li><a href="contact.php">Contact</a></li>
+							<li><a href="about_us.php">About Us</a></li> 
+							<li><a href="SignUp.php" class="button">Sign Up</a></li>
+							<li><a href="login.php" class="button">Log In</a></li>
+						</ul>
+						<?php }			?>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<section id="main" class="container 75%">
+					<header>
+						<h2>About Us</h2>
+						<p>This is Pantheon</p>
+					</header>
+						<div class="box">
+						<span class="image featured"><img src="images/aboutus.jpeg" alt="" /></span>
+					<h3><font color="black">What we do</font></h3>
+						<p> <font color="black"> Pantheon is a crowdsourced debt funding platform targeting early stage ventures. Founded by three UVA CS students, the company takes advantage of growing interest in crowdfunding while lowering investor risk. Traditional angel investing is an all or nothing payout and is a difficult position to exit. Gradual repayment over the term of a bond ensures at least some returns. This lowers the search cost of capital, allows founders to retain equity, and facilitates startups in VC dead zones. We’re launching while regulators start to crack down on crowdsourced equity funding and competitors like Kickstarter focus on “creativity” which leaves an obvious unfilled niche in the market. </font>
+ 						</p>
+ 						<h3><font color="black">Why our product works</font></h3>
+ 						<p><font color="black">The internet has revolutionized almost every aspect of business and for financing that’s taken the form of crowdfunding. By many estimates, crowdfunding has already surpassed venture capital (VC). In fact the World Bank estimates that by 2025 crowdfunding will be a source of $93 billion. The current crowdfunding market can be described in three segments: capital for tangible gifts (ie Kickstarter), capital for a cause (ie GoFundMe), and capital for equity (ie SeedInvest). This leaves capital for debt as a clearly unfilled niche in the crowdfunding market, which is where our servies step in.</p> 
+ 					<h3><font color="black">Who we are</font></h3>
+ 					<section class="box">
+									<h4><font color = "black"> Grant Guan </font></h4>
+									<p><span class="image left"><img src="images/grant.jpg" alt="" style="width:100px;" /></span>Grant Guan is a 3rd year Rodman scholar studying CS at UVA who’s passionate about helping new ventures take off. He leads a startup focused consulting group where he’s led projects for clients accepted into Y-Combinator and those in the midst of multimillion dollar funding rounds. Grant is well connected in the C’ville entrepreneurial community, working with local angel networks and government agencies. On the tech side, he’s an award winning developer and researcher transitioning into a product management and analytics role at Capital One. </p>
+									<h4><font color = "black"> Adi Sapre </font></h4>
+									<p><span class="image right"><img src="images/adi.jpg" alt="" style="width:100px;" /></span>Adi Sapre is a 3rd year Echols scholar studying CS and Statistics at UVA looking to level the startup playing field. He’s worked on the ground floor at Special Operations Solutions, a tech startup that specializes in drone technology, worked in the federal sector, and developed standard operating procedures for procurement at Ace Info Solutions, a private technology consulting firm. He serves as the Secretary General of the Virginia Model United Nations Conference, which serves over 1200 students across the US in an educational simulation.</p>
+									<h4><font color = "black"> Sean Little </font></h4>
+									<p><span class="image left"><img src="images/sean.jpg" alt="" style="width:100px;" /></span>Sean Little is a 4th year Computer Science student and Army ROTC cadet who has spent the past few years working on his leadership abilities. Sean placed in the top 10% of Army cadets in his class across the country and is the former Battalion Commander of UVa’s Army ROTC program, where he was responsible for the safety and training of all of UVa’s Army ROTC cadets. He has extensive experience overseas, and has even worked closely with foreign governments. Sean is also a graduate of the US Army’s Basic Airborne Course, where students learn to trust themselves and their gear and parachute out of a military aircraft. After graduation, Sean will commision as a 2nd Lieutenant in the US Army’s Cyber Branch. </p>
+								</section>
+
+						</div>
+					</div>
+				</section>
+						<?php
+							if($_SESSION["active"] != true) {
+						?>
+					<h4><center><font color="black"> Join Us! </font></center></h4>
+					<center><a class="button" href="SignUp.html">Sign Up</a></center>
+						<?php } else {} ?>
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollgress.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -13,11 +13,10 @@ if(mysqli_num_rows($result) != 0) {
     	session_start();
     	$_SESSION['email'] = $_POST['uname'];
     	$_SESSION['active'] = true;
-    	//echo $_SESSION['username'];
 
     	echo "<script >
-		window.location.href='memberHome.php';
-		</script>";
+			window.location.href='memberHome.php';
+			</script>";
 
 	} else {
 		$message = "Your email or password is incorrect";
