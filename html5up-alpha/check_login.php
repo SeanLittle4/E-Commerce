@@ -12,7 +12,8 @@ if(mysqli_num_rows($result) != 0) {
     if($secret == $row["Password"]) {
     	session_start();
     	$_SESSION['username'] = $_POST[uname];
-    	echo "$_SESSION['username']";
+    	$_SESSION['active'] = true;
+    	//echo "$_SESSION['username']";
 window.location.href='login.php';
 </script>";
 }
