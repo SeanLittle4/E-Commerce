@@ -4,6 +4,12 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+<?php
+	$uberPrice = 1000;
+	$lyftPrice = 2000;
+	$blueApronPrice = 500;
+	$helloFreshPrice = 250;
+?>
 <html>
 	<head>
 		<title>Member Home</title>
@@ -17,6 +23,26 @@
 		<div id="page-wrapper">
 
 			<!-- Header -->
+			<?php
+										/**
+										 * Copyright (c) 2014-2015 BitPay
+										 */
+										require __DIR__ . '/vendor/autoload.php';
+										$client = new \Bitpay\Client\Client();
+										$client->setAdapter(new \Bitpay\Client\Adapter\CurlAdapter());
+										$client->setNetwork(new \Bitpay\Network\Testnet());
+										$request = new \Bitpay\Client\Request();
+										$request->setHost('test.bitpay.com');
+										$request->setMethod(\Bitpay\Client\Request::METHOD_GET);
+										$request->setPath('rates/USD');
+										$response = $client->sendRequest($request);
+										$data = json_decode($response->getBody(), true);
+										$bitCoinRate = $data['data']['rate'];
+										$uberRate = $uberPrice/$bitCoinRate;
+										$lyftRate = $lyftPrice/$bitCoinRate;
+										$blueApronRate = $blueApronPrice/$bitCoinRate;
+										$helloFreshRate = $helloFreshPrice/$bitCoinRate;
+									?>
 				<header id="header">
 					<h1><a href="index.html"><img src="images/pantheon.png" style = "height: 100%" ></a></h1>
 					<nav id="nav">
@@ -45,7 +71,7 @@
 									<h3>Take me to the marketplace</h3>
 									<p>We always have a wonderful selection of <b>new</b> listings from <strong>top</strong> companies. Find something new right now!</p>
 									<span class="image featured"><img src="images/upward_stocks.jpg" alt="" /></span>
-									<!--
+									
 									<div class="row">
 							<div class="6u 12u(mobilep)">
 								<a href="https://www.uber.com/"><h3 align="left">Uber</h3></a>
@@ -72,7 +98,7 @@
 </form>
 							</div>
 						</div>
-					</div>-->
+					</div>
 									<span> <a class='button' href='generic.php'>Marketplace</a></span>
 								</section>
 
