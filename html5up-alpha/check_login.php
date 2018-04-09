@@ -11,20 +11,8 @@ if(mysqli_num_rows($result) != 0) {
 	$row = $result->fetch_assoc();
     if($secret == $row["Password"]) {
     	session_start();
-    	//Not quite sure if I'm doing this part right. Trying to start a session which stores a cookie on the user's computer.
-    	//session_start();
-    	//$_SESSION['login_user'] = $row["Name"];
-    //	echo "User name is " . $_SESSION['login_user'];
-	} else {
-		$message = "Your email or password is incorrect";
-		echo "<script type = 'text/javascript'> alert('$message');
-		window.location.href='login.php';
-		</script>";
-	}	
-
-} else {
-	$message = "Your email or password is incorrect";
-	echo "<script type = 'text/javascript'> alert('$message');
+    	$_SESSION['username'] = $_POST[uname];
+    	echo "$_SESSION['username']";
 window.location.href='login.php';
 </script>";
 }
