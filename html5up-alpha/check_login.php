@@ -11,29 +11,26 @@ if(mysqli_num_rows($result) != 0) {
 	$row = $result->fetch_assoc();
     if($secret == $row["Password"]) {
     	session_start();
-    	$_SESSION['username'] = $_POST[uname];
+    	$_SESSION['username'] = $_POST['uname'];
     	$_SESSION['active'] = true;
-    	echo $_SESSION['username'];
+    	//echo $_SESSION['username'];
 
     	echo "<script >
 		window.location.href='memberHome.php';
 		</script>";
 
-}
-else {
-$message = "Your email or password is incorrect";
-
-	echo "<script type = 'text/javascript'> alert('$message');
-window.location.href='login.php';
-</script>";
-}
-}
-else {
+	} else {
+		$message = "Your email or password is incorrect";
+		echo "<script type = 'text/javascript'> alert('$message');
+		window.location.href='login.php';
+		</script>";
+	}
+} else {
 	$message = "Your email or password is incorrect";
 
 	echo "<script type = 'text/javascript'> alert('$message');
-window.location.href='login.php';
-</script>";
+	window.location.href='login.php';
+	</script>";
 }
 
 
