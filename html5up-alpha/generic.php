@@ -1,3 +1,11 @@
+<?php 
+	session_start(); 
+	if(isset($_SESSION['active'])) {
+
+	} else {
+		$_SESSION['active'] = false;
+	}
+?>
 <!DOCTYPE HTML>
 <!--
 	Alpha by HTML5 UP
@@ -95,16 +103,29 @@ EOT;
 
 			<!-- Header -->
 				<header id="header">
-					<h1><a href="index.html"><img src="images/pantheon.png" style = "height: 100%" ></a></h1>
+					<h1><a href="index.php"><img src="images/pantheon.png" style = "height: 100%" ></a></h1>
 					<nav id="nav">
+						<?php
+							if($_SESSION["active"] == true) {
+						?>
 						<ul>
-							<li><a href="index.html">Home</a></li>
+							<li><a href="memberHome.php">Home</a></li>
+							<li><a href="generic.php">Marketplace</a></li>
+							<li><a href="contact.php">Contact</a></li>
+							<li><a href="about_us.php">About Us</a></li>
+							<li><a href="logout.php" class="button">Log Out</a></li>
+						</ul>
+						<?php } else { ?>
+
+						<ul>
+							<li><a href="index.php">Home</a></li>
 							<li><a href="generic.php">Marketplace</a>
 							<li><a href="contact.php">Contact</a></li>
-							<li><a href="about_us.html">About Us</a></li> 
-							<li><a href="SignUp.php" class="button">Sign Up</a>
+							<li><a href="about_us.php">About Us</a></li> 
+							<li><a href="SignUp.php" class="button">Sign Up</a></li>
 							<li><a href="login.php" class="button">Log In</a></li>
 						</ul>
+						<?php }			?>
 					</nav>
 				</header>
 
@@ -144,48 +165,64 @@ EOT;
 								<img src="images/uber.jpg" height=80 align="right" />	
 								<p>Uber is a p2p ridesharing, food delivery, and transportation company based in SF, CA. It operates in 633 cities worldwide.</p>
 								<h4><b>8% 5 year <?php echo $uberRate ?> BTC loan, equivalent to $1,000 USD</b></h4>
+
+							<?php if($_SESSION["active"] == true ) { ?>
 								<form action="https://test.bitpay.com/checkout" method="post" >
-  <input type="hidden" name="action" value="checkout" />
-  <input type="hidden" name="posData" value="" />
-  <input type="hidden" name="data" value="7/f26+/YTFW63Wx80y4/Fwf20/euwD6aqyriMrLnrthJWycyVMO0DJc7mIKmq4RYLzC214QejA2tnQLtf5BYQCt9KMEMdYhx9ePLuG2sf5HfHuRprnqAG9mXhfNpTbI37TrMJ2AeeXH2iXNmb/6Zm1FdzwAJou+HWg0J5l6cviXXftvv44FUQUMbFNoZuE0vmOka6UpDoq+oYLE5JTLdtX2xF3avbk4JdVn29p6cgdCWxa2WnnAFSSsB3taDcGFp" />
-  <input type="image" src="https://test.bitpay.com/img/button-large.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." >
-</form>
+  								<input type="hidden" name="action" value="checkout" />
+								  <input type="hidden" name="posData" value="" />
+								  <input type="hidden" name="data" value="7/f26+/YTFW63Wx80y4/Fwf20/euwD6aqyriMrLnrthJWycyVMO0DJc7mIKmq4RYLzC214QejA2tnQLtf5BYQCt9KMEMdYhx9ePLuG2sf5HfHuRprnqAG9mXhfNpTbI37TrMJ2AeeXH2iXNmb/6Zm1FdzwAJou+HWg0J5l6cviXXftvv44FUQUMbFNoZuE0vmOka6UpDoq+oYLE5JTLdtX2xF3avbk4JdVn29p6cgdCWxa2WnnAFSSsB3taDcGFp" />
+								  <input type="image" src="https://test.bitpay.com/img/button-large.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." >
+								</form>
+							<?php } else {} ?>
 							</div>
+
 							<div class="6u 12u(mobilep)">
 								<a href="https://www.lyft.com/"><h3>Lyft</h3></a>
 								<img src="images/lyft.png" height=80 align="right" />
 								<p>Lyft is an on-demand transportation company based in SF, CA. It develops, markets, and operates the Lyft car transportation mobile app.</p>
 								<h4><b>10% 5 year <?php echo $lyftRate ?> BTC loan, equivalent to $2,000 USD</b></h4>
+								
+								<?php if($_SESSION["active"] == true ) { ?>
+
 								<form action="https://test.bitpay.com/checkout" method="post" >
-  <input type="hidden" name="action" value="checkout" />
-  <input type="hidden" name="posData" value="" />
-  <input type="hidden" name="data" value="7/f26+/YTFW63Wx80y4/Fwf20/euwD6aqyriMrLnrthJWycyVMO0DJc7mIKmq4RYwCF01qKNYfIRA7gYf2B8+wsfbqu9+YDwNbkUEO3XKcLNvudE514WKWdu+XK/RNHSginALdpU58wXt6yd2RSCBepVnvnsp+IyP9PUJHR6V2CQ7F8ddQFaO1BPwL6XC7etqCjbDzaUh9qu4SyINFvPQJDnEVVv7BC9g227vfNH8mvRPZ4czfj/b1O55hHtJKty" />
-  <input type="image" src="https://test.bitpay.com/img/button-large.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." >
-</form>
+								  <input type="hidden" name="action" value="checkout" />
+								  <input type="hidden" name="posData" value="" />
+								  <input type="hidden" name="data" value="7/f26+/YTFW63Wx80y4/Fwf20/euwD6aqyriMrLnrthJWycyVMO0DJc7mIKmq4RYwCF01qKNYfIRA7gYf2B8+wsfbqu9+YDwNbkUEO3XKcLNvudE514WKWdu+XK/RNHSginALdpU58wXt6yd2RSCBepVnvnsp+IyP9PUJHR6V2CQ7F8ddQFaO1BPwL6XC7etqCjbDzaUh9qu4SyINFvPQJDnEVVv7BC9g227vfNH8mvRPZ4czfj/b1O55hHtJKty" />
+								  <input type="image" src="https://test.bitpay.com/img/button-large.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." >
+								</form>
+								<?php } else {} ?>
 							</div>
+
 						<div class="6u 12u(mobilep)">
 								<a href="https://www.lyft.com/"><h3>Blue Apron</h3></a>
 								<img src="images/blueapron.jpg" height=80 align="right" />
 								<p>Blue Apron Inc. is an subcription based American ingredient-and-recipe meal kit delivery service</p>
 								<h4><b>10% 5 year <?php echo $blueApronRate ?> BTC loan, equivalent to $500 USD</b></h4>
+
+								<?php if($_SESSION["active"] == true ) { ?>
 								<form action="https://test.bitpay.com/checkout" method="post" >
-  <input type="hidden" name="action" value="checkout" />
-  <input type="hidden" name="posData" value="" />
-  <input type="hidden" name="data" value="7/f26+/YTFW63Wx80y4/Fwf20/euwD6aqyriMrLnrthJWycyVMO0DJc7mIKmq4RYc4s+Cs3LnkG+J7mU/wyDCA26Mh9CiJoZoI1sQCMgBdZLRst/UAgt06/Jy8v3XyMx95fDlYtA1nOt1hsyFQjcjZ89AZl9QgKkkwaNT0/lO/htehPp98ybM9OiG+jrA05oFAzamApxA0BPIZ+dVz/0dhwemdf8qwl3DJXcHnmo/IX2/a/vV77ZquwVybh4m3dLXrb829r+dPZnK/PnBIWpcFrANOHDpEh06U4XSs6Fz0W3wC73yy9vJLX0QbufvbuF" />
-  <input type="image" src="https://test.bitpay.com/img/button-large.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." >
-</form>
+								  <input type="hidden" name="action" value="checkout" />
+								  <input type="hidden" name="posData" value="" />
+								  <input type="hidden" name="data" value="7/f26+/YTFW63Wx80y4/Fwf20/euwD6aqyriMrLnrthJWycyVMO0DJc7mIKmq4RYc4s+Cs3LnkG+J7mU/wyDCA26Mh9CiJoZoI1sQCMgBdZLRst/UAgt06/Jy8v3XyMx95fDlYtA1nOt1hsyFQjcjZ89AZl9QgKkkwaNT0/lO/htehPp98ybM9OiG+jrA05oFAzamApxA0BPIZ+dVz/0dhwemdf8qwl3DJXcHnmo/IX2/a/vV77ZquwVybh4m3dLXrb829r+dPZnK/PnBIWpcFrANOHDpEh06U4XSs6Fz0W3wC73yy9vJLX0QbufvbuF" />
+								  <input type="image" src="https://test.bitpay.com/img/button-large.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." >
+								</form>
+								<?php } else {} ?>
 							</div>
+
 							<div class="6u 12u(mobilep)">
 								<a href="https://www.lyft.com/"><h3>Hello Fresh</h3></a>
 								<img src="images/hellofresh.png" height=80 align="right" />
 								<p>HelloFresh is an international publicly traded meal-kit company based in Berlin, Germany. </p>
 								<h4><b>7% 5 year <?php echo $helloFreshRate ?> BTC loan, equivalent to $250 USD</b></h4>
+
+								<?php if($_SESSION["active"] == true ) { ?>
 								<form action="https://test.bitpay.com/checkout" method="post" >
-  <input type="hidden" name="action" value="checkout" />
-  <input type="hidden" name="posData" value="" />
-  <input type="hidden" name="data" value="7/f26+/YTFW63Wx80y4/Fwf20/euwD6aqyriMrLnrthJWycyVMO0DJc7mIKmq4RYMacYEx6BPX1AZCYgJvKmkHPy0AgAn9dcHx3poOZJz6IpOQxbnxyu3/0hlMUrP7aVcEVi6kRqstxm13orFOgWmMwQVHzY3I42WFc7ncNQ/cNVulDn/UmU+x58S867LYdwm1c1lED/NLoJiTHftNgsguYitap+CLCaUtchTab6Dukyu80EnZa33281IkF8FHv207AxCR04lTFx/+vQLdmzClT9XVv/cegJZb2Q5iUI4qQeUgNbcJFYXNuYgNKa9sqU" />
-  <input type="image" src="https://test.bitpay.com/img/button-large.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." >
-</form>
+								  <input type="hidden" name="action" value="checkout" />
+								  <input type="hidden" name="posData" value="" />
+								  <input type="hidden" name="data" value="7/f26+/YTFW63Wx80y4/Fwf20/euwD6aqyriMrLnrthJWycyVMO0DJc7mIKmq4RYMacYEx6BPX1AZCYgJvKmkHPy0AgAn9dcHx3poOZJz6IpOQxbnxyu3/0hlMUrP7aVcEVi6kRqstxm13orFOgWmMwQVHzY3I42WFc7ncNQ/cNVulDn/UmU+x58S867LYdwm1c1lED/NLoJiTHftNgsguYitap+CLCaUtchTab6Dukyu80EnZa33281IkF8FHv207AxCR04lTFx/+vQLdmzClT9XVv/cegJZb2Q5iUI4qQeUgNbcJFYXNuYgNKa9sqU" />
+								  <input type="image" src="https://test.bitpay.com/img/button-large.png" border="0" name="submit" alt="BitPay, the easy way to pay with bitcoins." >
+								</form>
+								<?php } else {} ?>
 							</div>
 						</div>
 					</div>
